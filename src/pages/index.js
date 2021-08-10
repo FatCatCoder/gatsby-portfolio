@@ -10,6 +10,7 @@ import Particles from 'react-particles-js';
 
 // components
 import Navbar from '../components/navbar.js';
+import Sidebar from '../components/sidebar.js';
 
 // styles
 import "../styles/global.scss"
@@ -129,14 +130,19 @@ var pconfig = {
 const IndexPage = () => {
   return (
     <>
-      
+    <div className="row col-12 m-0 p-0">
+      <h1 className="display-1 z-front">Christian Claudeaux</h1>
+      <Sidebar />
+
       <Particles 
-        className="vh-100 particles"
+        className="vh-100 particles position-absolute col-12 top-0"
         params={pconfig}
       />
       <Navbar />
+      
 
-    <div className="vh-100">
+      <div className="vh-100 row">
+      </div>
     </div>
     </>
   )

@@ -1,5 +1,54 @@
+.z-behind{
+    z-index: -1;
+}
+
+.z-front{
+    z-index: 2;
+}
+
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+@keyframes backgroundColorPalette {
+	0% {
+		background: black;
+	}
+	25% {
+		background: #222121;
+	}
+	50% {
+		background: #5f4444;
+	}
+	75% {
+		background: #382a2a;
+	}
+	100% {
+		background: #181515;
+	}
+}
+.backgroundColorPalatte{
+    animation-name: backgroundColorPalette;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear; 
+}
+
+@keyframes backgroundGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
 .particles{
-    background-color: black;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: backgroundGradient 15s ease infinite;
 }
