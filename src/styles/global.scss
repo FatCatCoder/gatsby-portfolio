@@ -27,10 +27,10 @@
 }
 .backgroundColorPalatte{
     animation-name: backgroundColorPalette;
-	animation-duration: 10s;
+	animation-duration: 20s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-	animation-timing-function: linear; 
+	animation-timing-function: ease-in-out; 
 }
 
 @keyframes backgroundGradient {
@@ -45,10 +45,15 @@
 	}
 }
 
-
-
 .particles{
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
-	animation: backgroundGradient 15s ease infinite;
+	animation: backgroundGradient 20s ease-in-out infinite;
+}
+
+.nav-btn{
+	width: 100px !important;
+}
+.nav-btn:hover{
+	background-color: rgba($color: #f3f3f379, $alpha: .1) !important;
 }

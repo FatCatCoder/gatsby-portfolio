@@ -9,139 +9,49 @@ import Particles from 'react-particles-js';
 
 
 // components
-import Navbar from '../components/navbar.js';
+//import Navbar from '../components/navbar.js';
 import Sidebar from '../components/sidebar.js';
 
 // styles
 import "../styles/global.scss"
+import particlesConfig from "../styles/particlesConfig.json"
 
-var pconfig = {
-  "particles": {
-    "number": {
-      "value": 80,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 2,
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "repulse"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-};
+
 
 
 const IndexPage = () => {
   return (
     <>
     <div className="row col-12 m-0 p-0">
-      <h1 className="display-1 z-front">Christian Claudeaux</h1>
+      <h1 className="display-1 text-center z-front">Christian Claudeaux</h1>
+
       <Sidebar />
 
       <Particles 
-        className="vh-100 particles position-absolute col-12 top-0"
-        params={pconfig}
+        className="vh-100 particles position-absolute col top-0"
+        params={particlesConfig}
       />
-      <Navbar />
+
+      {/* <Navbar /> */}
       
 
       <div className="vh-100 row">
+      </div>
+
+      <div className="vh-100 row">
+      <h1 className="display-1 text-center z-front">About Me</h1>
+      </div>
+
+      <div className="vh-100 row">
+      <h1 className="display-1 text-center z-front">Portfolio</h1>
+      </div>
+
+      <div className="vh-100 row">
+      <h1 className="display-1 text-center z-front">Resume</h1>
+      </div>
+
+      <div className="vh-100 row">
+      <h1 className="display-1 text-center z-front">Contact</h1>
       </div>
     </div>
     </>
