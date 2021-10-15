@@ -5,8 +5,17 @@
 .z-front{
     z-index: 2;
 }
-
+@import 'home.module.scss';
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+html, body{
+	//font-family: Garamond, serif;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+  
 
 @keyframes backgroundColorPalette {
 	0% {
@@ -56,4 +65,11 @@
 }
 .nav-btn:hover{
 	background-color: rgba($color: #f3f3f379, $alpha: .1) !important;
+}
+
+.christianclaudeaux{
+	font-weight: 600;
+	color: whitesmoke;
+	transform: skewX(5deg);
+	text-shadow: 5px 1px  rgb(53, 50, 50) !important;
 }

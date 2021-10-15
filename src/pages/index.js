@@ -1,16 +1,17 @@
 // plugins
 import * as React from "react"
-import BackgroundImage from 'gatsby-background-image'
-import { StaticImage } from "gatsby-plugin-image"
+// import BackgroundImage from 'gatsby-background-image'
+// import { StaticImage } from "gatsby-plugin-image"
 import Particles from 'react-particles-js';
 
-
-// pages
-
-
 // components
-//import Navbar from '../components/navbar.js';
-import Sidebar from '../components/sidebar.js';
+import Navbar from '../components/navbar.jsx';
+import Home from '../components/home.jsx';
+import About from '../components/about.jsx';
+import Portfolio from '../components/portfolio.jsx';
+import Blog from '../components/blog.jsx';
+import Contact from '../components/contact.jsx';
+// import Sidebar from '../components/sidebar.js';
 
 // styles
 import "../styles/global.scss"
@@ -22,37 +23,19 @@ import particlesConfig from "../styles/particlesConfig.json"
 const IndexPage = () => {
   return (
     <>
-    <div className="row col-12 m-0 p-0">
-      <h1 className="display-1 text-center z-front">Christian Claudeaux</h1>
-
-      <Sidebar />
+    <div className="container-fluid m-0 p-0 bg-transparent">
+      {/* <Sidebar /> */}
+      <Navbar />
+      <Home />
+      <About />
+      <Portfolio />
+      <Blog />
+      <Contact />
 
       <Particles 
-        className="vh-100 particles position-absolute col top-0"
+        className="vh-100 particles z-behind position-fixed top-0"
         params={particlesConfig}
       />
-
-      {/* <Navbar /> */}
-      
-
-      <div className="vh-100 row">
-      </div>
-
-      <div className="vh-100 row">
-      <h1 className="display-1 text-center z-front">About Me</h1>
-      </div>
-
-      <div className="vh-100 row">
-      <h1 className="display-1 text-center z-front">Portfolio</h1>
-      </div>
-
-      <div className="vh-100 row">
-      <h1 className="display-1 text-center z-front">Resume</h1>
-      </div>
-
-      <div className="vh-100 row">
-      <h1 className="display-1 text-center z-front">Contact</h1>
-      </div>
     </div>
     </>
   )

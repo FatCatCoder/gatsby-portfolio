@@ -16,7 +16,7 @@ export default function Sidebar(){
                 <p>Hello</p>
                 <p>About Me</p>
                 <p>Portfolio</p>
-                <p>Resume</p>
+                <p>Blog</p>
                 <p>Contact</p>
             </div>
         </div>
