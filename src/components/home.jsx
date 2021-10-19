@@ -14,8 +14,8 @@ export default function Home(){
           </div>
         </div>
         <div className="row">
-            <StaticImage className={"mx-auto rounded-circle"} transformOptions={{cropFocus: "attention"}} placeholder={"blurred"} quality={100} object-fit={"contain"} layout={"fixed"} width={250} height={250} src={"../images/avatar.jpg"} alt={"avatar"} />
-          </div>
+            <StaticImage className={"avatar-image mx-auto rounded-circle"} style={{borderRadius: '50%'}} transformOptions={{cropFocus: "attention"}} placeholder={"blurred"} quality={100} object-fit={"contain"} layout={"fixed"} width={250} height={250} src={"../images/avatar.jpg"} alt={"avatar"} />
+        </div>
       </div>
     </>
     )
