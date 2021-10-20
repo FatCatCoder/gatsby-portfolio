@@ -7,6 +7,8 @@ export default function About(){
     <div className="min-vh-100 container m-0 p-0 mx-auto" id="about">
         <h1 className="display-1 text-center text-white">About Me</h1>
         <div className="container mx-auto text-center">
+            <h3>Hello there.</h3>
+            <p className="fs-3 border-start border-3 p-2">I love making the internet a more wonderful place by building exciting web applications. After developing with python in college I moved to javascript and the flourishing community of open source tech projects it boasts. I now ...  </p>
             <h3>I love developing with</h3>
             <div className="row">
                 <div className="col-6 col-md-6">
