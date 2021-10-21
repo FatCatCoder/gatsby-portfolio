@@ -1,0 +1,13 @@
+.custom-card{
+    box-shadow: 5px 5px black;
+    transition: box-shadow .35s;
+    &:hover{
+        box-shadow: 10px 10px black;
+    }
+}
+
+.stained-glass{
+    background: transparent !important;
+    background-blend-mode: soft-light !important;
+    backdrop-filter: blur(2px) !important;
+}

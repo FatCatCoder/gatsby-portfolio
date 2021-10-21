@@ -16,29 +16,29 @@ import Contact from '../components/contact.jsx';
 // styles
 import "../styles/global.scss"
 import particlesConfig from "../styles/particlesConfig.json"
-
-
+import {Scrollbar} from 'smooth-scrollbar-react';
 
 
 const IndexPage = () => {
+ 
   return (
     <>
-    <div className="container-fluid m-0 p-0 bg-transparent">
-      {/* <Sidebar /> */}
-      <Navbar />
-      <Home />
-      <About />
-      <Portfolio />
-      <Blog />
-      <Contact />
+      <div className="container-fluid m-0 p-0 bg-transparent">
+        {/* <Sidebar /> */}
+        <Navbar />
+        <Home />
+        <About />
+        <Portfolio />
+        <Blog />
+        <Contact />
 
-      <Particles 
-        className="vh-100 particles z-behind position-fixed top-0"
-        params={particlesConfig}
-      />
-    </div>
+        <Particles 
+          className="vh-100 particles z-behind position-fixed top-0"
+          params={particlesConfig}
+        />
+      </div>
     </>
   )
 }
 
-export default IndexPage
+export default IndexPage;

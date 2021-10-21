@@ -27,6 +27,13 @@
   dependencies:
     tslib "~2.0.1"
 
+"@ashthornton/asscroll@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@ashthornton/asscroll/-/asscroll-2.0.2.tgz#f3f246effe6af849114f5b3934aa265e61dfce9b"
+  integrity sha512-+FXJJI2UZqxWOvug7220x0DgBDW59MogCJeYm+OFcVDMVumY+D1pFDwfpNIA74RHPPdctAjWpR5lB+rm6HEzJA==
+  dependencies:
+    "@unseenco/e" "^1.8.2"
+
 "@babel/code-frame@7.10.4":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.10.4.tgz#168da1a36e90da68ae8d49c0f1b48c7c6249213a"
@@ -1143,6 +1150,20 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.36"
 
+"@fortawesome/free-brands-svg-icons@^5.15.4":
+  version "5.15.4"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.15.4.tgz#ec8a44dd383bcdd58aa7d1c96f38251e6fec9733"
+  integrity sha512-f1witbwycL9cTENJegcmcZRYyawAFbm8+c6IirLmwbbpqz46wyjbQYLuxOc7weXFXfB7QR8/Vd2u5R3q6JYD9g==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.36"
+
+"@fortawesome/free-regular-svg-icons@^5.15.4":
+  version "5.15.4"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-5.15.4.tgz#b97edab436954333bbeac09cfc40c6a951081a02"
+  integrity sha512-9VNNnU3CXHy9XednJ3wzQp6SwNwT3XaM26oS4Rp391GsxVYA+0oDR2J194YCIWf7jNRCYKjUCOduxdceLrx+xw==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.36"
+
 "@fortawesome/free-solid-svg-icons@^5.15.4":
   version "5.15.4"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.15.4.tgz#2a68f3fc3ddda12e52645654142b9e4e8fbb6cc5"
@@ -2214,6 +2235,13 @@
   dependencies:
     "@typescript-eslint/types" "4.28.3"
     eslint-visitor-keys "^2.0.0"
+
+"@unseenco/e@^1.8.2":
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/@unseenco/e/-/e-1.10.1.tgz#8bcef4e72e51ca8901cf6b48b3e8575ccc74c967"
+  integrity sha512-ydu7mdmDG4aHuI9HpWPa6MV61h5c7RoSAPp4FCUKCgK2YvwWr0BTpEnFmrhUgz8yJ22UMSAfI3qOxoQlv1TnWg==
+  dependencies:
+    selector-set "^1.1.5"
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"
@@ -4037,6 +4065,11 @@ core-js-pure@^3.15.0:
   version "3.15.2"
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.15.2.tgz#c8e0874822705f3385d3197af9348f7c9ae2e3ce"
   integrity sha512-D42L7RYh1J2grW8ttxoY1+17Y4wXZeKe7uyplAI3FkNQyI5OgBIAjUfFiTPfL1rs0qLpxaabITNbjKl1Sp82tA==
+
+core-js@^3.6.4:
+  version "3.18.3"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.18.3.tgz#86a0bba2d8ec3df860fefcc07a8d119779f01509"
+  integrity sha512-tReEhtMReZaPFVw7dajMx0vlsz3oOb8ajgPoHVYGxr8ErnZ6PcYEvvmjGmXlfpnxpkYSdOQttjB+MvVbCGfvLw==
 
 core-js@^3.6.5, core-js@^3.9.0:
   version "3.15.2"
@@ -8495,6 +8528,11 @@ lock@^1.0.0:
   resolved "https://registry.yarnpkg.com/lock/-/lock-1.1.0.tgz#53157499d1653b136ca66451071fca615703fa55"
   integrity sha1-UxV0mdFlOxNspmRRBx/KYVcD+lU=
 
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
 lodash.assignin@^4.0.9:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.assignin/-/lodash.assignin-4.2.0.tgz#ba8df5fb841eb0a3e8044232b0e263a8dc6a28a2"
@@ -11727,6 +11765,11 @@ select-hose@^2.0.0:
   resolved "https://registry.yarnpkg.com/select-hose/-/select-hose-2.0.0.tgz#625d8658f865af43ec962bfc376a37359a4994ca"
   integrity sha1-Yl2GWPhlr0Psliv8N2o3NZpJlMo=
 
+selector-set@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/selector-set/-/selector-set-1.1.5.tgz#60c135aea482b6f46a2d95ad72058927690a8634"
+  integrity sha512-6SQw6yMew5iOZ8/cDHDEnJWRM4ot2mxP6szZyF5ptrBogw4AcS4EXRj/8BUfgAMwVfdL84qpModlBMOl2NVrsQ==
+
 selfsigned@^1.10.8:
   version "1.10.11"
   resolved "https://registry.yarnpkg.com/selfsigned/-/selfsigned-1.10.11.tgz#24929cd906fe0f44b6d01fb23999a739537acbe9"
@@ -11997,6 +12040,20 @@ slugify@^1.4.4:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.0.tgz#6bdf8ed01dabfdc46425b67e3320b698832ff893"
   integrity sha512-FkMq+MQc5hzYgM86nLuHI98Acwi3p4wX+a5BO9Hhw4JdK4L7WueIiZ4tXEobImPqBz2sVcV0+Mu3GRB30IGang==
+
+smooth-scrollbar-react@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/smooth-scrollbar-react/-/smooth-scrollbar-react-2.3.0.tgz#6266380f3973aeba4aae48961a4f5ebc3c81d3ba"
+  integrity sha512-cxHLN0jn6bRfsSPnEGdEI6UnqtTcoLFwkXNqXbdsv21MLmrib46nIg0D84Z8YoruQApYpf20SJoUi3wrTO6V1g==
+
+smooth-scrollbar@^8.6.3:
+  version "8.6.3"
+  resolved "https://registry.yarnpkg.com/smooth-scrollbar/-/smooth-scrollbar-8.6.3.tgz#411489e29cc1e7e10ad311511c67ea1fe5197cce"
+  integrity sha512-YTGK6+Vhw53sbdFVD8FSr+z2Ugp7hGAxKD3tNtYFq23fGn/oknWTwpWxym5aCYMXdzNNeKtiWbdu5op5bauzAw==
+  dependencies:
+    core-js "^3.6.4"
+    lodash-es "^4.17.21"
+    tslib "^1.10.0"
 
 snake-case@^2.1.0:
   version "2.1.0"

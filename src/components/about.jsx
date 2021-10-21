@@ -8,7 +8,11 @@ export default function About(){
         <h1 className="display-1 text-center text-white">About Me</h1>
         <div className="container mx-auto text-center">
             <h3>Hello there.</h3>
-            <p className="fs-3 border-start border-3 p-2">I love making the internet a more wonderful place by building exciting web applications. After developing with python in college I moved to javascript and the flourishing community of open source tech projects it boasts. I now ...  </p>
+            <p className="fs-3 border-start border-3 p-2">
+                After developing with python in college I moved to javascript and the flourishing community of open source tech projects it boasts.
+                 Now I love making the internet a more wonderful place by building exciting web applications.
+
+            </p>
             <h3>I love developing with</h3>
             <div className="row">
                 <div className="col-6 col-md-6">
@@ -16,9 +20,9 @@ export default function About(){
                         <li className="list-group-item bg-dark text-white">Front End</li>
                         <li className="list-group-item list-color">React</li>
                         <li className="list-group-item list-color">Next.js</li>
-                        <li className="list-group-item list-color">Gatsby</li>
                         <li className="list-group-item list-color">Typescript</li>
-                        <li className="list-group-item list-color">Bootstrap v5</li>
+                        <li className="list-group-item list-color">Bootstrap 5</li>
+                        <li className="list-group-item list-color">Sass</li>
                     </ul>
                 </div>
                 <div className="col-6 col-md-6">
