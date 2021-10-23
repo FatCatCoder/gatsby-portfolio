@@ -1,44 +1,82 @@
 // plugins
 import * as React from "react"
-// import BackgroundImage from 'gatsby-background-image'
-// import { StaticImage } from "gatsby-plugin-image"
-import Particles from 'react-particles-js';
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // components
-import Navbar from '../components/navbar.jsx';
-import Home from '../components/home.jsx';
-import About from '../components/about.jsx';
-import Portfolio from '../components/portfolio.jsx';
-import Blog from '../components/blog.jsx';
-import Contact from '../components/contact.jsx';
-// import Sidebar from '../components/sidebar.js';
+import Layout from '../components/Layout';
+import SmoothScroll from '../components/SmoothScroll';
 
 // styles
-import "../styles/global.scss"
+import Particles from 'react-particles-js';
 import particlesConfig from "../styles/particlesConfig.json"
-import {Scrollbar} from 'smooth-scrollbar-react';
+import "../styles/global.scss"
+
+import Navbar from '../components/Navbar.jsx';
+import Sidebar from "../components/sidebar.js";
+
+import SmoothScrollBar from "../testing/SmoothScrollBar";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 const IndexPage = () => {
- 
+  // if (typeof window !== "undefined") {
+  //   gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+  // }
+
+  function nativeSmoothScroll() {
+    const userPlatform = window?.navigator?.userAgentData?.platform || window?.navigator?.platform || 'disable-smooth-scroll';
+    const nativeSmoothScrollPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K', 'iPhone', 'iPad', 'iPod'];
+  
+    return nativeSmoothScrollPlatforms.includes(userPlatform)
+  }
+
+  const myContent = React.useRef();
+  React.useEffect(() => {
+    AOS.init();
+    if(!nativeSmoothScroll()){
+      SmoothScroll(myContent.current)
+    }
+  }, [])
+
+  // <SmoothScrollBar></SmoothScrollBar>
+
   return (
     <>
-      <div className="container-fluid m-0 p-0 bg-transparent">
-        {/* <Sidebar /> */}
-        <Navbar />
-        <Home />
-        <About />
-        <Portfolio />
-        <Blog />
-        <Contact />
-
-        <Particles 
-          className="vh-100 particles z-behind position-fixed top-0"
-          params={particlesConfig}
-        />
-      </div>
+    <Navbar />
+    <div ref={myContent} className="container-fluid">
+      <Layout />
+    </div>
+    <Particles className="vh-100 particles z-behind position-fixed top-0 p-0 m-0" params={particlesConfig}/>
     </>
   )
 }
 
 export default IndexPage;
+
+
+/*
+
+  {!nativeSmoothScroll()?
+        <>
+      <Navbar />
+      <div ref={myContent} className="container-fluid">
+        <Layout />
+      </div>
+      <Particles className="vh-100 particles z-behind position-fixed top-0 p-0 m-0" params={particlesConfig}/>
+      </>
+      
+      :
+        <>
+      <Navbar />
+      <Sidebar />
+      <div ref={myContent} className="container-fluid">
+        <Layout />
+      </div>
+      <Particles className="vh-100 particles z-behind position-fixed top-0 p-0 m-0" params={particlesConfig}/>
+      </>
+    }
+
+*/

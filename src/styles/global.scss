@@ -11,7 +11,37 @@ html, body{
 	margin: 0;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
+	
+	
+	/* width */
+	::-webkit-scrollbar {
+	width: 15px;
+	border-radius: 20px !important;
+	background: transparent !important;
+	overflow: overlay;
+  	}
+  
+  /* Track */
+  	::-webkit-scrollbar-track {
+	// background: transparent !important;
+	background: transparent;
+	overflow: overlay;
+  	}
+  
+  	/* Handle */
+  	::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 20px !important;
+	overflow: overlay;
+  	}
+  
+  	/* Handle on hover */
+  	::-webkit-scrollbar-thumb:hover {
+	background: #555;
+	overflow: overlay;
+  	}
 }
+
 
 @keyframes backgroundGradient {
 	0% { background-position: 0% 50%; }
@@ -31,7 +61,6 @@ html, body{
 .z-front{
     z-index: 2;
 }
-
 
 .nav-btn{
 	width: 100px !important;
