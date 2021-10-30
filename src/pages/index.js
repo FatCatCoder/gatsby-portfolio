@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // components
 import Layout from '../components/Layout';
+import Navbar from '../components/Navbar.jsx';
+import Sidebar from "../components/sidebar.js";
 
 // styles
 import Particles from 'react-particles-js';
@@ -15,10 +17,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faSun, faMoon} from "@fortawesome/free-solid-svg-icons";
 import * as DarkTheme from "../styles/darkMode.module.scss" 
 import "../styles/global.scss"
-
-
-import Navbar from '../components/Navbar.jsx';
-import Sidebar from "../components/sidebar.js";
 
 
 
@@ -63,12 +61,7 @@ const IndexPage = () => {
   // if (typeof window !== "undefined") {
   //   gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
   // }
-
   let [theme, setTheme] = React.useState(true); // True(light) / False(dark)
-
-  React.useEffect(() => {
-    console.log('Refresh')
-  }, [])
 
   return(
     <>

@@ -15,7 +15,6 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@ashthornton/asscroll": "^2.0.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
@@ -26,8 +25,6 @@
     "@popperjs/core": "^2.9.2",
     "@react-spring/parallax": "^9.3.0",
     "@react-spring/web": "^9.3.0",
-    "animate.css": "^4.1.1",
-    "aos": "^2.3.4",
     "bootstrap": "^5.0.2",
     "gatsby": "^3.9.1",
     "gatsby-background-image": "^1.5.3",
@@ -35,7 +32,6 @@
     "gatsby-plugin-mdx": "^2.9.0",
     "gatsby-plugin-react-helmet": "^4.9.0",
     "gatsby-plugin-sass": "^4.9.0",
-    "gatsby-plugin-scroll-reveal": "^0.0.7",
     "gatsby-plugin-sharp": "^3.9.0",
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-source-graphql": "^3.14.0",
@@ -43,21 +39,13 @@
     "gsap": "^3.8.0",
     "locomotive-scroll": "^4.1.3",
     "particles.js": "^2.0.0",
-    "rc-scroll-anim": "^2.7.6",
     "react": "^17.0.1",
-    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^17.0.1",
     "react-gsap": "^3.2.1",
     "react-helmet": "^6.1.0",
-    "react-intersection-observer": "^8.32.2",
     "react-locomotive-scroll": "^0.2.0",
     "react-particles-js": "^3.5.3",
-    "react-reveal": "^1.2.2",
     "react-spring": "^9.3.0",
-    "sass": "^1.35.2",
-    "smooth-scrollbar": "^8.6.3",
-    "smooth-scrollbar-react": "^2.3.0",
-    "tsparticles": "^1.33.2",
-    "zustand": "^3.6.0"
+    "sass": "^1.35.2"
   }
 }

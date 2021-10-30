@@ -1,27 +1,10 @@
 import React from "react"
-import AOS from 'aos';
-import Fade from 'react-reveal/Fade';
-import { useInView } from 'react-intersection-observer'
-
 import { Reveal, Tween } from 'react-gsap';
 
-
-// data-aos={`fade-${anime}`}
-export default function GitHubCard({data, anime}) {
+export default function GitHubCard({data}) {
   //console.log('https://raw.githubusercontent.com' + data?.url.split('https://github.com')[1] + '/main/README.md')
-  
-  // const { ref, inView, entry } = useInView({
-  //   /* Optional options */
-  //   threshold: 0,
-  // })
-
-  // React.useEffect(()=>{
-  //   console.log(inView, entry);
-  // },[inView])
   return (
     <>
-    {/* ${inView? 'fade-in': 'fade-out'} */}
-    {/* <Fade when={inView}> */}
     <Reveal repeat>
       <Tween from={{ opacity: 0 }} duration={2}>
       <div className={`col-12 col-lg-6`}>
@@ -51,7 +34,6 @@ export default function GitHubCard({data, anime}) {
       </div>
       </Tween>
     </Reveal>
-      {/* </Fade> */}
     </>
   )
 }
