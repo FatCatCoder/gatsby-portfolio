@@ -3,7 +3,9 @@ $enable-responsive-font-sizes: true;
 @import 'home.module.scss';
 @import 'about.module.scss';
 @import 'portfolio.module.scss';
+@import './locoscroll.css';
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
 
 html, body{
 	//font-family: Garamond, serif;
@@ -12,10 +14,9 @@ html, body{
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 	
-	
 	/* width */
 	::-webkit-scrollbar {
-	width: 15px;
+	width: 0.75rem;
 	border-radius: 20px !important;
 	background: transparent !important;
 	overflow: overlay;
@@ -23,8 +24,7 @@ html, body{
   
   /* Track */
   	::-webkit-scrollbar-track {
-	// background: transparent !important;
-	background: transparent;
+	background: transparent !important;
 	overflow: overlay;
   	}
   
@@ -75,3 +75,48 @@ html, body{
 	transform: skewX(5deg);
 	text-shadow: 5px 1px  rgb(53, 50, 50) !important;
 }
+
+.fade-in {
+	-webkit-animation: fade-in 1.5s ease-in both;
+	        animation: fade-in 1.5s ease-in both;
+}
+
+ @-webkit-keyframes fade-in {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  @keyframes fade-in {
+	0% {
+	  opacity: 0;
+	}
+	100% {
+	  opacity: 1;
+	}
+  }
+  
+  .fade-out {
+	-webkit-animation: fade-out 1.5s ease-out both;
+	        animation: fade-out 1.5s ease-out both;
+}
+
+ @-webkit-keyframes fade-out {
+	0% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  @keyframes fade-out {
+	0% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  

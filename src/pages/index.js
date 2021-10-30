@@ -17,8 +17,8 @@ import Navbar from '../components/Navbar.jsx';
 import Sidebar from "../components/sidebar.js";
 
 import SmoothScrollBar from "../testing/SmoothScrollBar";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
+
 
 
 const IndexPage = () => {
@@ -35,9 +35,8 @@ const IndexPage = () => {
 
   const myContent = React.useRef();
   React.useEffect(() => {
-    AOS.init();
     if(!nativeSmoothScroll()){
-      SmoothScroll(myContent.current)
+      // SmoothScroll(myContent.current)
     }
   }, [])
 
@@ -46,10 +45,12 @@ const IndexPage = () => {
   return (
     <>
     <Navbar />
-    <div ref={myContent} className="container-fluid">
+    <LocomotiveScrollProvider options={{smooth: true, lerp: 0.05, multiplier: 1, containerRef: myContent, tablet: {smooth: false}, smartphone: {smooth: false}}}>
+    <div ref={myContent} data-scroll-container className="container-fluid">
       <Layout />
     </div>
     <Particles className="vh-100 particles z-behind position-fixed top-0 p-0 m-0" params={particlesConfig}/>
+    </LocomotiveScrollProvider>
     </>
   )
 }

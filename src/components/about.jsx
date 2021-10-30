@@ -5,7 +5,7 @@ import '../styles/about.module.scss'
 export default function About(){
     return(
     <>
-    <div className="min-vh-100 container m-0 p-0 mx-auto" id="about">
+    <div data-scroll-section className="min-vh-100 container m-0 p-0 mx-auto" id="about">
         <h1 className="display-1 text-center text-white">About Me</h1>
         <div className="container mx-auto text-center shadow stained-glass">
             <h3 className="text-start text-light">Greetings,</h3>

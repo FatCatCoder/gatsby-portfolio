@@ -1,0 +1,25 @@
+query { 
+	user(login: "FatCatCoder"){
+    pinnedItems(first: 6){
+      nodes{
+        ... on Repository{
+          name
+          url
+          homepageUrl
+          createdAt
+          updatedAt
+          pushedAt
+          stargazerCount
+          description
+          languages(first: 3){
+            nodes{
+              ... on Language{
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

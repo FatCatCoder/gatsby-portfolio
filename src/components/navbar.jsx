@@ -6,7 +6,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 function Navbar(){
     return(
-        <nav className="navbar navbar-expand-lg bg-transparent position-fixed start-50 translate-middle-x top-0">
+        <nav className="navbar navbar-expand-lg bg-transparent position-fixed start-50 translate-middle-x top-0" style={{zIndex: 999}}>
             <div className="container mx-auto">
                 <button className="navbar-toggler btn text-primary mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
                     <FontAwesomeIcon icon={faCoffee} />
