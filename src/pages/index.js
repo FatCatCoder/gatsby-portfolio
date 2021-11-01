@@ -23,17 +23,15 @@ import "../styles/global.scss"
 function NonNative({theme}){
   const myContent = React.useRef();
   let scrollOptions = {smooth: true, lerp: 0.05, multiplier: 1, containerRef: myContent, tablet: {smooth: false}, smartphone: {smooth: false}};
-  React.useEffect(()=>{
-    console.log('ok')
-  })
+
   return(
     <>
     <LocomotiveScrollProvider options={scrollOptions}>
-    <Navbar />
-    <div ref={myContent} data-scroll-container className="container-fluid">
-      <Layout />
-    </div>
-    <Particles className={`vh-100 particles z-behind position-fixed top-0 p-0 m-0 ${theme || DarkTheme.particles}`} params={particlesConfig}/>
+      <Navbar />
+      <div ref={myContent} data-scroll-container className="container-fluid">
+        <Layout />
+      </div>
+      <Particles className={`vw-100 vh-100 particles z-behind position-fixed top-0 p-0 m-0 ${theme || DarkTheme.particles}`} params={particlesConfig}/>
     </LocomotiveScrollProvider>
     </>
   )
@@ -46,7 +44,7 @@ function Native({theme}){
       <div className="container-fluid">
         <Layout />
       </div>
-      <Particles className="vh-100 particles z-behind position-fixed top-0 p-0 m-0" params={particlesConfig}/>
+      <Particles className={`vw-100 vh-100 particles z-behind position-fixed top-0 p-0 m-0 ${theme || DarkTheme.particles}`} params={particlesConfig}/>
     </>
   )
 }
@@ -66,7 +64,7 @@ const IndexPage = () => {
   return(
     <>
     {nativeSmoothScroll()? <Native theme={theme}/> : <NonNative theme={theme}/> }
-    <button className={`btn btn-transparent fs-4 position-fixed top-0 left-0 ${theme? 'text-warning':'text-light'}`} onClick={() => setTheme(!theme)}>Theme: {theme? <FontAwesomeIcon icon={faSun} />: <FontAwesomeIcon icon={faMoon} />}</button>
+    <button className={`btn btn-transparent fs-4 position-fixed top-0 left-0 ${theme? 'text-warning':'text-light'}`} onClick={() => setTheme(!theme)}>{theme? <FontAwesomeIcon icon={faSun} />: <FontAwesomeIcon icon={faMoon} />}</button>
     </>
   )
 }

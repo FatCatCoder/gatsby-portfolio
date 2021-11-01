@@ -1,12 +1,13 @@
 import React from "react"
-import { Reveal, Tween } from 'react-gsap';
+import { Reveal, Tween, ScrollTrigger } from 'react-gsap';
 
 export default function GitHubCard({data}) {
   //console.log('https://raw.githubusercontent.com' + data?.url.split('https://github.com')[1] + '/main/README.md')
   return (
     <>
-    <Reveal repeat>
-      <Tween from={{ opacity: 0 }} duration={2}>
+    {/* <Reveal repeat> */}
+    <ScrollTrigger start="-200px center" end="200px center" scrub={0.5} markers>
+      <Tween from={{ opacity: 0 }} to={{opacity: 1}}>
       <div className={`col-12 col-lg-6`}>
         <div className="card text-center h-100 bg-white custom-card">
           <div className="card-header bg-white">Featured</div>
@@ -33,7 +34,8 @@ export default function GitHubCard({data}) {
         </div>
       </div>
       </Tween>
-    </Reveal>
+      </ScrollTrigger>
+    {/* </Reveal> */}
     </>
   )
 }
