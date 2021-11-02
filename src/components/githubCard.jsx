@@ -1,14 +1,29 @@
 import React from "react"
-import { Reveal, Tween, ScrollTrigger } from 'react-gsap';
+import gsap from "gsap";
+import useLocoScroll from '../utils/useLocoScroll'
 
 export default function GitHubCard({data}) {
+  const cardRef = React.useRef(null)
+  useLocoScroll();
+  React.useEffect(() => {
+      gsap.fromTo(cardRef.current, {y: -50, opacity: 0}, {
+          y: 0,
+          opacity: 1,
+          scrollTrigger: {
+              id: "portfolioCard",
+              trigger: cardRef.current,
+              start: "top bottom",
+              end: "bottom center",
+              markers: true,
+              scrub: true
+          }
+      });
+  }, [])
+  
   //console.log('https://raw.githubusercontent.com' + data?.url.split('https://github.com')[1] + '/main/README.md')
   return (
     <>
-    {/* <Reveal repeat> */}
-    <ScrollTrigger start="-200px center" end="200px center" scrub={0.5} markers>
-      <Tween from={{ opacity: 0 }} to={{opacity: 1}}>
-      <div className={`col-12 col-lg-6`}>
+      <div ref={cardRef} id="portfolioCard" className={`portfolioCard col-12 col-lg-6`}>
         <div className="card text-center h-100 bg-white custom-card">
           <div className="card-header bg-white">Featured</div>
           <div className="card-body">
@@ -33,9 +48,6 @@ export default function GitHubCard({data}) {
           <div className="card-footer text-muted">updated@ {new Date(data?.pushedAt).toLocaleString() + ' EST'}</div>
         </div>
       </div>
-      </Tween>
-      </ScrollTrigger>
-    {/* </Reveal> */}
     </>
   )
 }

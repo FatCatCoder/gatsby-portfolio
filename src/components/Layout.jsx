@@ -8,8 +8,10 @@ import Portfolio from './portfolio.jsx';
 import Blog from './blog.jsx';
 import Contact from './contact.jsx';
 
+import useLocoScroll from "../utils/useLocoScroll.js";
 
 export default function IndexLayout({ children }) {
+  useLocoScroll();
   return (
     <>
         <Home />

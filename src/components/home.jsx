@@ -6,7 +6,7 @@ import { StaticImage } from "gatsby-plugin-image"
 export default function Home(){
     return(
     <>
-    <div data-scroll-section className="min-vh-100 container-fluid m-0 p-0" id="home">
+    <div className="min-vh-100 container-fluid m-0 p-0" id="home">
         <div class="row">
           <div class="text-center col-auto mx-auto mt-5">
             <h1 className="display-1 text-center mx-auto col-auto christianclaudeaux">Christian Claudeaux</h1>
