@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "gatsby"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
@@ -15,19 +14,19 @@ function Navbar(){
                 <div className="collapse navbar-collapse mx-auto text-center" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link className="nav-link active text-white" to="#home">Home</Link>
+                            <button className="nav-link btn btn-transparent active text-white" to="#home">Home</button>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white" to="#about">About</Link>
+                            <button className="nav-link btn btn-transparent text-white" to="#about">About</button>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white" to="#portfolio">Portfolio</Link>
+                            <button className="nav-link btn btn-transparent text-white" to="#portfolio">Portfolio</button>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white" to="#blog">Blog</Link>
+                            <button className="nav-link btn btn-transparent text-white" to="#blog">Blog</button>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white" to="#contact">Contact</Link>
+                            <button className="nav-link btn btn-transparent text-white" to="#contact">Contact</button>
                         </li>   
                     </ul>
                 </div>

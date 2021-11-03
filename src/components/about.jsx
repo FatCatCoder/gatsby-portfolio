@@ -5,6 +5,7 @@ import '../styles/about.module.scss'
 
 export default function About(){
     const myRef = React.useRef(null)
+    const myBackdrop = React.useRef(null)
     useLocoScroll();
     React.useEffect(() => {
         gsap.fromTo(myRef.current, {y: -50, opacity: 0}, {
@@ -23,13 +24,13 @@ export default function About(){
 
     return(
     <>
-    <div className="min-vh-100 container m-0 p-0 mx-auto" id="about">
+    <div data-scroll-section className="min-vh-100 container m-0 p-0 mx-auto" id="about">
         <h1 ref={myRef} className="display-1 text-center text-white" id="aboutme">About Me</h1>
-        <div className="container mx-auto text-center shadow stained-glass">
+        <div ref={myBackdrop} className="container mx-auto text-center shadow stained-glass">
             <h3 className="text-start text-light">Greetings,</h3>
             <p className="fs-3 text-light p-2">
                 After developing with python in college I moved to javascript and the flourishing community of open source tech projects it boasts.
-                 Now I love making the internet a more wonderful place by building exciting web applications.
+                 Now I love making the internet a more wonderful place by building exciting web applications. I also compose music, build with micro-controllers, and geek out over espresso.
 
             </p>
             <h3>I love developing with</h3>
