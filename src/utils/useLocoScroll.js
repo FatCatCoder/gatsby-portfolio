@@ -12,6 +12,15 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 export default function useLocoScroll() {
   const scrollerObject = useStore(state => state.scrollerObject)
   const setScrollerObject = useStore(state => state.setScrollerObject)
+  const isScrolling = useStore(state => state.isScrolling)
+  const setIsScrolling = useStore(state => state.setIsScrolling)
+
+  document.addEventListener("touchmove", ()=>{
+    setIsScrolling(true)
+  })
+  document.addEventListener("touchend", ()=>{
+    setIsScrolling(false)
+  })
 
   useEffect(() => {
     if(!nativeSmoothScroll()){
@@ -54,6 +63,8 @@ export default function useLocoScroll() {
         locoScroll.update();
       }
     };
+    const scrollStart = ()=>{setIsScrolling(true); console.log('scroll start', isScrolling);};
+    const scrollEnd = ()=>{setIsScrolling(false); console.log('scroll end', isScrolling);};
 
     const scrollToPage = (e) => {
       e.preventDefault();
@@ -65,6 +76,8 @@ export default function useLocoScroll() {
     });
 
     ScrollTrigger.addEventListener("refresh", lsUpdate);
+    ScrollTrigger.addEventListener("scrollStart", scrollStart);
+    ScrollTrigger.addEventListener("scrollEnd", scrollEnd);
     ScrollTrigger.refresh();
 
     return () => {

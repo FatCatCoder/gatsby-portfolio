@@ -15,10 +15,11 @@ import ParticlesBackground from '../components/ParticlesBackground'
 import "../styles/global.scss"
 
 import {useStore} from '../store';
+import nativeSmoothScroll from "../utils/nativeSmoothScroll";
 
 const IndexPage = () => {
-  useLocoScroll();
-  const scrollerObject = useStore(state => state.scrollerObject)
+ // useLocoScroll();
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -27,18 +28,17 @@ const IndexPage = () => {
       preserveAspectRatio: "xMidYMid slice"
       }
     };
-    console.log(scrollerObject);
 
   return(
     <>
     <Navbar />
-    
-      <div data-scroll-container className="main-container container-fluid" id="main-container" style={{willChange: 'transform'}}>
-        <Lottie options={defaultOptions} height={150} width={150} style={{position: "fixed", top: '0px', left: '0px'}} />
+    {nativeSmoothScroll()?<Lottie options={defaultOptions} height={'8rem'} width={'8rem'} style={{position: "fixed", top: '0px', left: '0px'}} />:null}
+      <div data-scroll-container className="main-container container-fluid bg-transparent" id="main-container" style={{willChange: 'transform'}}>
+      {!nativeSmoothScroll()?<Lottie options={defaultOptions} height={'8rem'} width={'8rem'} style={{position: "fixed", top: '0px', left: '0px'}} />:null}
         <Layout />
-        <ParticlesBackground />
+        {!nativeSmoothScroll()? <ParticlesBackground /> : null}
       </div>
-    
+      {nativeSmoothScroll()? <ParticlesBackground /> : null}
     </>
   )
 }

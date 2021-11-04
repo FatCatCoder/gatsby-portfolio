@@ -13,4 +13,5 @@
     // background: #0000 !important;
     // background-blend-mode:exclusion !important;
     backdrop-filter: blur(2px) !important;
+    transition: backdrop-filter 2s ease-in;
 }
