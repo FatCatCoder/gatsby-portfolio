@@ -1,17 +1,16 @@
 .custom-card{
+    color: black;
+    background-color: #F6E8EA !important;
     box-shadow: 5px 5px #3e3e3e;
     transform: translateX(0) translateY(0);
     transition: box-shadow, transform .35s;
     &:hover{
-        // box-shadow: 10px 10px black;
-        box-shadow: 1px 1px #3e3e3e, 2px 2px #3e3e3e, 3px 3px #3e3e3e, 4px 4px #3e3e3e, 5px 5px #3e3e3e, 6px 6px #3e3e3e, 7px 7px #3e3e3e, 8px 8px #3e3e3e;
+        box-shadow: 1px 1px #3e3e3e, 2px 2px #3e3e3e, 3px 3px #3e3e3e, 4px 4px #3e3e3e, 5px 5px #3e3e3e, 6px 6px #3e3e3e, 7px 7px #3e3e3e, 8px 8px #3e3e3e, 10px 10px #3e3e3e;
         transform: translateX(-8px) translateY(-8px);
     }
 }
 
 .stained-glass{
-    // background: #0000 !important;
-    // background-blend-mode:exclusion !important;
     backdrop-filter: blur(2px) !important;
     transition: backdrop-filter 2s ease-in;
 }

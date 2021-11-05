@@ -2,7 +2,6 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image"
 import '../styles/home.module.scss'
 
-
 export default function Home(){
     return(
     <>
