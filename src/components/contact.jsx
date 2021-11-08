@@ -1,26 +1,42 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import Lottie from "react-lottie";
 import LottieAnimeGithub from '../images/github-lottie.json';
 import LottieAnimeLinkedin from '../images/linkedin-lottie.json';
 
 export default function Contact(){
     const defaultOptions = (x) => {
-       const data = { 
-        loop: true,
-        autoplay: true,
-        animationData: x,
-        rendererSettings: { preserveAspectRatio: "xMidYMid slice" }
-       }
-       return data;
-        };
+       return { 
+            loop: true,
+            autoplay: true,
+            animationData: x,
+            rendererSettings: { preserveAspectRatio: "xMidYMid slice" }
+        }
+    };
     return(
     <>
-    <div data-scroll-section className="vh-100 row m-0 p-0" id="contact">
-        <div className="row mx-auto text-center">
-        <h1 className="display-1 text-center">Contact</h1>
-            <h4>Lets see what we can build together</h4>
-            <Lottie options={defaultOptions(LottieAnimeGithub)} isClickToPauseDisabled={true} height={'5rem'} width={'5rem'} style={{height: "8rem", width: '8rem'}} />
-            <Lottie options={defaultOptions(LottieAnimeLinkedin)} isClickToPauseDisabled={true} height={'5rem'} width={'5rem'} style={{height: "8rem", width: '8rem'}} />
+    <div data-scroll-section className="vh-100 row m-0 p-0" id="contact" style={{overflow: "hidden"}}>
+        <div className="row mx-auto text-center my-auto">
+            <div className="container">
+                <h1 className="display-1 text-center">Contact</h1>
+                <h4><em>Lets see what we can build together</em></h4>
+                <div className="fs-4">
+                    <p className=""><FontAwesomeIcon icon={faEnvelope} /> christianclaudeaux@gmail.com</p>
+                    <a className="text-decoration-none text-light" href="teL:9414058529"><FontAwesomeIcon icon={faMobileAlt} /> 941-405-8529</a>
+                </div>
+                <div className="col-10 col-md-6 col-lg-4 col-xl-3 mx-auto text-center">
+                    <a className="btn btn-github col-6" href="https://github.com/FatCatCoder">
+                        <Lottie options={defaultOptions(LottieAnimeGithub)} isClickToPauseDisabled={true} height={'8rem'} width={'8rem'} />
+                    </a>
+                    <a className="btn btn-linkedin col-6" href="https://www.linkedin.com/in/christian-claudeaux-006479225">
+                        <Lottie options={defaultOptions(LottieAnimeLinkedin)} isClickToPauseDisabled={true} height={'8rem'} width={'8rem'} />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div className="row position-absolute bottom-0 mb-2 text-center">
+            <a className="text-decoration-none text-light" href="https://github.com/FatCatCoder/gatsby-portfolio">Christian Claudeaux @2021</a>
         </div>
     </div>
     </>

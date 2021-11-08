@@ -13,7 +13,11 @@ html, body{
 	padding: 0;
 	margin: 0;
 	overflow-x: hidden;
-	scroll-behavior: smooth;
+	scroll-behavior: smooth !important;
+	height: 100vh;
+	width: 100vw;
+	// position: -webkit-relative;
+	// position: relative;
 	
 	/* width */
 	::-webkit-scrollbar {
@@ -50,6 +54,7 @@ html, body{
 	100% { background-position: 0% 50%; }
 }
 .particles{
+	// position: -webkit-fixed;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 	background-size: 400% 400%;
 	animation: backgroundGradient 20s ease-in-out infinite;
@@ -66,8 +71,11 @@ html, body{
 .nav-btn{
 	width: 100px !important;
 }
-.nav-btn:hover{
-	background-color: rgba($color: #f3f3f379, $alpha: .1) !important;
+
+.spaceman{
+	@include media-breakpoint-down(sm){
+		font-size: 0.5rem !important;
+	}
 }
 
 .christianclaudeaux{

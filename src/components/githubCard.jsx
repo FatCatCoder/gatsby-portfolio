@@ -2,21 +2,21 @@ import React from "react"
 import gsap from "gsap";
 import useLocoScroll from '../utils/useLocoScroll'
 
-export default function GitHubCard({data}) {
+export default function GitHubCard({data, anime}) {
   const cardRef = React.useRef(null)
   useLocoScroll();
   function calcDate(){
     const today = new Date().toLocaleDateString() ;
     const updated = new Date(data?.pushedAt).toLocaleDateString();
-    const daysAgo = Math.floor(Date.parse(today) - Date.parse(updated)) / 86400000;
+    const daysAgo = Math.round(Math.floor(Date.parse(today) - Date.parse(updated)) / 86400000);
     if (!daysAgo){
       return updated
     }
     return daysAgo + ' Days ago'
   }
   React.useEffect(() => {
-      gsap.fromTo(cardRef.current, {y: -50, opacity: 0}, {
-          y: 0,
+      gsap.fromTo(cardRef.current, {y: -50, x: anime? 150: -150, opacity: 0}, {
+          y: 0, x: 0,
           opacity: 1,
           scrollTrigger: {
               id: "portfolioCard",
@@ -32,7 +32,7 @@ export default function GitHubCard({data}) {
   return (
     <>
       <div ref={cardRef} id="portfolioCard" className={`portfolioCard col-12 col-lg-6`}>
-        <div className="card text-center h-100 custom-card rounded-pill overflow-hidden">
+        <div className="card text-center h-100 custom-card rounded-2 overflow-hidden">
           <div className="card-header">Featured</div>
           <div className="card-body">
             <h5 className="card-title">{data?.name}</h5>

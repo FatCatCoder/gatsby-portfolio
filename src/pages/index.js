@@ -2,25 +2,24 @@ import * as React from "react"
 
 // components
 import Layout from '../components/Layout';
-import Navbar from '../components/Navbar.jsx';
-import Sidebar from "../components/sidebar.js";
 
 // utils
 import nativeSmoothScroll from "../utils/nativeSmoothScroll";
+import isMobile from "../utils/isMobile";
 
 // styles
 import ParticlesBackground from '../components/ParticlesBackground'
 import "../styles/global.scss"
 
 const IndexPage = () => {
+//${isMobile() === 0? 'yeah': 'no'} ${window?.screen?.orientation}, ${window?.navigator?.maxTouchPoints}, ${window?.navigator?.platform}, ${window?.navigator?.userAgent}
   return(
     <>
-    <Navbar />
-      <div data-scroll-container className="main-container container-fluid bg-transparent" id="main-container" style={{willChange: 'transform'}}>
+      <div data-scroll-container className="main-container container-fluid bg-transparent position-relative" id="main-container">
         <Layout />
-        {!nativeSmoothScroll()? <ParticlesBackground /> : null}
+        {!isMobile()? <ParticlesBackground /> : null}
       </div>
-      {nativeSmoothScroll()? <ParticlesBackground /> : null}
+      {isMobile()? <ParticlesBackground /> : null}
     </>
   )
 }

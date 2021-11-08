@@ -15,12 +15,24 @@ export default function useLocoScroll() {
   const isScrolling = useStore(state => state.isScrolling)
   const setIsScrolling = useStore(state => state.setIsScrolling)
 
-  document.addEventListener("touchmove", ()=>{
+  // document.addEventListener("touchmove", ()=>{
+  //   setIsScrolling(true)
+  // })
+  // document.addEventListener("touchend", ()=>{
+  //   setIsScrolling(false)
+  // })
+
+  if(nativeSmoothScroll){
+  ScrollTrigger.addEventListener("scrollStart", () => {
+    //console.log("scrolling started!")
     setIsScrolling(true)
-  })
-  document.addEventListener("touchend", ()=>{
+  });
+
+  ScrollTrigger.addEventListener("scrollEnd", () => {
+    //console.log("scrolling ended!")
     setIsScrolling(false)
-  })
+  });
+}
 
   useEffect(() => {
     if(!nativeSmoothScroll()){

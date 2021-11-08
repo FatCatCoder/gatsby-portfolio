@@ -19,8 +19,8 @@ dom.watch();
 
 export default function About(){
     const myRef = React.useRef(null)
-    const myBackdrop = React.useRef(null)
-    const diceText = React.useRef(null)
+    const tagLine = React.useRef(null)
+    const bodyText = React.useRef(null)
 
    useLocoScroll();
 
@@ -34,27 +34,42 @@ export default function About(){
         rendererSettings: { preserveAspectRatio: "xMidYMid slice" }
         };
 
-    function factGen(){
-        const facts = [
-            "I Love riding and maintaining my 1983 yamaha virago",
-            "Out sailing catamarans when ever I can",
-            "Building DIY projects such as a kyoto drip tower powered by arduino in my free time",
-            "I cook a delicious indian curry",
-            "Love python",
-            "Cigars, whiskey and many other expensive habits to feed..."
-        ];
-        diceText.current.innerHTML = facts[Math.floor(Math.random()*facts.length)]
-    }
-
     React.useEffect(() => {
-        gsap.fromTo(myRef.current, {y: -50, opacity: 0}, {
+        // About Me (heading)
+        gsap.fromTo(myRef.current, {y: -150, opacity: 0}, {
             y: 0,
             opacity: 1,
             scrollTrigger: {
                 id: "aboutme",
                 trigger: myRef.current,
-                start: "-80px center",
-                end: "80px center",
+                start: "-180px center",
+                end: "180px center",
+                markers: true,
+                scrub: true
+            }
+        });
+
+        gsap.fromTo(tagLine.current, {x: -150, opacity: 0, skewX: 90}, {
+            x: 0, skewX: 0,
+            opacity: 1,
+            scrollTrigger: {
+                id: "aboutme",
+                trigger: tagLine.current,
+                start: "-150px center",
+                end: "150px center",
+                markers: true,
+                scrub: true
+            }
+        });
+
+        gsap.fromTo(bodyText.current, {x: 150, opacity: 0, skewX: -90}, {
+            x: 0, skewX: 0,
+            opacity: 1,
+            scrollTrigger: {
+                id: "aboutme",
+                trigger: bodyText.current,
+                start: "-100px center",
+                end: "100px center",
                 markers: true,
                 scrub: true
             }
@@ -66,14 +81,14 @@ export default function About(){
     <div data-scroll-section className="min-vh-100 container m-0 p-0 mx-auto" id="about">
 
         <h1 ref={myRef} className="display-1 text-center text-white" id="aboutme">About Me</h1>
-        <div ref={myBackdrop} className={`container mx-auto text-center shadow ${isScrolling? '': 'stained-glass'}`}>
-            <h4 className="text-start text-light">Hello There,</h4>
+        <div className={`container mx-auto text-center shadow ${isScrolling? '': 'stained-glass'}`}>
+            <h4 className="text-start fw-light text-lighter">Hello There,</h4>
             <div className="row">
                 <div class="text-center">
-                    <p className="fs-2"><em>"Building exciting & dynamic web applications <br /> to make the internet a more wonderful place."</em></p>
+                    <p ref={tagLine} className="fs-2"><em>"Building exciting & dynamic web applications <br /> to make the internet a more wonderful place."</em></p>
                 </div>
             </div>
-            <p className="fs-3 text-light p-2">
+            <p ref={bodyText} className="fs-3 text-light p-2">
                 I find my heart in the flourishing community of javascript and open source projects it boasts.
                  I also compose music, build with micro-controllers (c++), and geek out over espresso.
                  Mainly interested in building creative and productive platforms and tools.
@@ -102,7 +117,7 @@ export default function About(){
             <table className="text-end">
                 <tr>
                     <th>
-                        <Lottie options={defaultOptions} height={'3rem'} width={"3rem"} />
+                        <Lottie isClickToPauseDisabled={true} options={defaultOptions} height={'3rem'} width={"3rem"} />
                     </th>
                     <th style={{fontWeight: 400}}>
                         Looking for the next project to take on.
