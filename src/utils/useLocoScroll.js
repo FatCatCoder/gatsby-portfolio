@@ -11,89 +11,96 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 export default async function useLocoScroll() {
   const scrollerObject = useStore(state => state.scrollerObject)
   const setScrollerObject = useStore(state => state.setScrollerObject)
-  const isScrolling = useStore(state => state.isScrolling)
   const setIsScrolling = useStore(state => state.setIsScrolling)
 
   useEffect(() => {
+    if(true){
+      ScrollTrigger.addEventListener("scrollStart", () => {
+        setIsScrolling(true)
+      });
 
-    
-  if(nativeSmoothScroll()){
-    ScrollTrigger.addEventListener("scrollStart", () => {
-      setIsScrolling(true)
-    });
-
-    ScrollTrigger.addEventListener("scrollEnd", () => {
-      setIsScrolling(false)
-    });
-  }
-
-    if(!nativeSmoothScroll() && typeof window !== `undefined`){
-    const scrollEl = document.querySelector("#main-container");
-    const scrollOptions = {el: scrollEl, smooth: true, getDirection: true, lerp: 0.08, multiplier: 1, smoothMobile: false, tablet: {smooth: false}, smartphone: {smooth: false}};
-    let locoScroll = new LocomotiveScroll(scrollOptions);
-    
-    if(scrollerObject === ''){
-      setScrollerObject(locoScroll)
+      ScrollTrigger.addEventListener("scrollEnd", () => {
+        setIsScrolling(false)
+      });
     }
 
-    locoScroll.on("scroll", ScrollTrigger.update);
+    if( typeof window !== `undefined`){
+    
+      const scrollEl = document.querySelector("#___gatsby");
 
-    ScrollTrigger.defaults({scroller: "#main-container"});
+      const scrollOptions = {
+        el: scrollEl, smooth: true, getDirection: true, 
+        lerp: 0.07, multiplier: 1, touchMultiplier: 2.5, 
+        smoothMobile: true, tablet: {smooth: false}, smartphone: {smooth: true}
+      };
+        
+      console.log('new scroller' , scrollerObject);
 
-    ScrollTrigger.scrollerProxy(scrollEl, {
-      scrollTop(value) {
+      let locoScroll = scrollerObject || new LocomotiveScroll(scrollOptions);
+      window.scroll = locoScroll;
+      
+      if(scrollerObject === ''){
+        setScrollerObject(locoScroll)
+      }
+
+      locoScroll.on("scroll", ScrollTrigger.update);
+
+      ScrollTrigger.defaults({scroller: "#___gatsby"});
+
+      ScrollTrigger.scrollerProxy(scrollEl, {
+        scrollTop(value) {
+          if (locoScroll) {
+            return arguments.length
+              ? locoScroll.scrollTo(value, 0, 0)
+              : locoScroll.scroll.instance.scroll.y;
+          }
+          return null;
+        },
+        getBoundingClientRect() {
+          return {
+            top: 0,
+            left: 0,
+            width: window.innerWidth,
+            height: window.innerHeight
+          };
+        },
+
+        pinType: scrollEl.style.transform ? "transform" : "fixed"
+      });
+
+      const lsUpdate = () => {
         if (locoScroll) {
-          return arguments.length
-            ? locoScroll.scrollTo(value, 0, 0)
-            : locoScroll.scroll.instance.scroll.y;
+          locoScroll.update();
         }
-        return null;
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight
-        };
-      },
+      };
+      const scrollStart = ()=>{setIsScrolling(true)};
+      const scrollEnd = ()=>{setIsScrolling(false)};
 
-      pinType: scrollEl.style.transform ? "transform" : "fixed"
-    });
-
-    const lsUpdate = () => {
-      if (locoScroll) {
-        locoScroll.update();
+      const scrollToPage = (e) => {
+        e.preventDefault();
+        locoScroll.scrollTo(e.target.getAttribute("to"));
       }
-    };
-    const scrollStart = ()=>{setIsScrolling(true)};
-    const scrollEnd = ()=>{setIsScrolling(false)};
 
-    const scrollToPage = (e) => {
-      e.preventDefault();
-      locoScroll.scrollTo(e.target.getAttribute("to"));
+      gsap.utils.toArray(".nav-link").forEach(function(a) {
+        a.addEventListener("click", function(e) {scrollToPage(e)});
+      });
+
+      ScrollTrigger.addEventListener("refresh", lsUpdate);
+      ScrollTrigger.addEventListener("scrollStart", scrollStart);
+      ScrollTrigger.addEventListener("scrollEnd", scrollEnd);
+      ScrollTrigger.refresh();
+
+      return () => {
+        if (locoScroll) {
+          ScrollTrigger.removeEventListener("refresh", lsUpdate);
+          gsap.utils.toArray(".nav-link").forEach(function(a) {
+            a.removeEventListener("click", function(e) {scrollToPage(e)});
+          });
+          locoScroll.destroy();
+          locoScroll = null;
+          console.log("Kill", locoScroll);
+        }
+      };
     }
-
-    gsap.utils.toArray(".nav-link").forEach(function(a) {
-      a.addEventListener("click", function(e) {scrollToPage(e)});
-    });
-
-    ScrollTrigger.addEventListener("refresh", lsUpdate);
-    ScrollTrigger.addEventListener("scrollStart", scrollStart);
-    ScrollTrigger.addEventListener("scrollEnd", scrollEnd);
-    ScrollTrigger.refresh();
-
-    return () => {
-      if (locoScroll) {
-        ScrollTrigger.removeEventListener("refresh", lsUpdate);
-        gsap.utils.toArray(".nav-link").forEach(function(a) {
-          a.removeEventListener("click", function(e) {scrollToPage(e)});
-        });
-        locoScroll.destroy();
-        locoScroll = null;
-        console.log("Kill", locoScroll);
-      }
-    };
-   }
   }, []);
 }

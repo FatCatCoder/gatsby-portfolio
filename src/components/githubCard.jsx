@@ -7,16 +7,18 @@ import * as DarkTheme from "../styles/darkMode.module.scss"
 export default function GitHubCard({data, anime}) {
   const globalTheme = useStore(state=> state.theme);
   const cardRef = React.useRef(null)
-  useLocoScroll();
-  function calcDate(){
-    const today = new Date().toLocaleDateString() ;
-    const updated = new Date(data?.pushedAt).toLocaleDateString();
-    const daysAgo = Math.round(Math.floor(Date.parse(today) - Date.parse(updated)) / 86400000);
-    if (!daysAgo){
-      return updated
-    }
-    return daysAgo + ' Days ago'
-  }
+  // useLocoScroll();
+
+  // function calcDate(){
+  //   const today = new Date().toLocaleDateString() ;
+  //   const updated = new Date(data?.pushedAt).toLocaleDateString();
+  //   const daysAgo = Math.round(Math.floor(Date.parse(today) - Date.parse(updated)) / 86400000);
+  //   if (!daysAgo){
+  //     return updated
+  //   }
+  //   return daysAgo + ' Days ago'
+  // }
+
   React.useEffect(() => {
       gsap.fromTo(cardRef.current, {y: -50, x: anime? 150: -150, opacity: 0}, {
           y: 0, x: 0,
@@ -26,11 +28,11 @@ export default function GitHubCard({data, anime}) {
               trigger: cardRef.current,
               start: "top bottom",
               end: "bottom center",
-              markers: true,
+              markers: false,
               scrub: true
           }
       });
-  }, [])
+  })
 
   return (
     <>
@@ -60,7 +62,7 @@ export default function GitHubCard({data, anime}) {
               <em>{data?.languages?.nodes.map(x => x.name).join(', ')}</em>
             </p>
           </div>
-          <div className="card-footer text-muted">updated@ {calcDate()}</div>
+          <div className="card-footer text-muted">updated@ {data?.updatedAt}</div>
         </div>
       </div>
     </>

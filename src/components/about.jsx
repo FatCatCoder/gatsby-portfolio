@@ -2,18 +2,20 @@ import React from "react";
 import gsap from "gsap";
 import useLocoScroll from '../utils/useLocoScroll'
 import {useStore} from '../store';
-import { StaticImage } from "gatsby-plugin-image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact, faNodeJs, faBootstrap } from '@fortawesome/free-brands-svg-icons';
-import { faDice } from '@fortawesome/free-solid-svg-icons';
+
+// styles 
 import '../styles/about.module.scss'
 import * as DarkTheme from "../styles/darkMode.module.scss" 
 
+// graphics & icons
 import Lottie from "react-lottie";
 import LottieAnime from '../images/green-circle-pulsing.json';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faReact, faNodeJs, faBootstrap } from '@fortawesome/free-brands-svg-icons';
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faGraphQL, faNginx, faPostgreSQL, faRedis, faSass, faTypeScript } from "../assets/icons";
+
 library.add(faGraphQL, faNginx, faPostgreSQL, faRedis, faSass, faTypeScript);
 dom.watch();
 
@@ -23,7 +25,7 @@ export default function About(){
     const tagLine = React.useRef(null)
     const bodyText = React.useRef(null)
 
-   useLocoScroll();
+//    useLocoScroll();
 
     const scrollerObject = useStore(state => state.scrollerObject);
     const isScrolling = useStore(state => state.isScrolling)
@@ -37,6 +39,7 @@ export default function About(){
         };
 
     React.useEffect(() => {
+        console.log(window.scroll);
         // About Me (heading)
         gsap.fromTo(myRef.current, {y: -150, opacity: 0}, {
             y: 0,
@@ -46,7 +49,7 @@ export default function About(){
                 trigger: myRef.current,
                 start: "-180px center",
                 end: "180px center",
-                markers: true,
+                markers: false,
                 scrub: true
             }
         });
@@ -59,7 +62,7 @@ export default function About(){
                 trigger: tagLine.current,
                 start: "-150px center",
                 end: "150px center",
-                markers: true,
+                markers: false,
                 scrub: true
             }
         });
@@ -72,11 +75,11 @@ export default function About(){
                 trigger: bodyText.current,
                 start: "-50px bottom",
                 end: "50px center",
-                markers: true,
+                markers: false,
                 scrub: true
             }
         });
-    }, [])
+    })
 
     return(
     <>

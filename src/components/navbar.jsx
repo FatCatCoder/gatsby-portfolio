@@ -5,11 +5,11 @@ import isMobile from '../utils/isMobile';
 
 function Navbar(){
     function toSnap(e){
-        if(isMobile()){
-            e.preventDefault();
-            let elm = document.getElementById(e.target.getAttribute('to').slice(1));
-            elm.scrollIntoView({behavior: 'smooth', block: 'start'})
-        }
+        // if(isMobile()){
+        //     e.preventDefault();
+        //     let elm = document.getElementById(e.target.getAttribute('to').slice(1));
+        //     elm.scrollIntoView({behavior: 'smooth', block: 'start'})
+        // }
     }
     return(
         <nav className={`navbar navbar-expand bg-transparent mx-auto position-absolute start-50 translate-middle-x top-0 mx-auto`} style={{zIndex: 999}}>

@@ -5,7 +5,10 @@ import About from './about.jsx';
 import Portfolio from './portfolio.jsx';
 import Contact from './contact.jsx';
 
-export default function IndexLayout({ children }) {
+import useLocoScroll from '../utils/useLocoScroll'
+
+export default function IndexLayout() {
+  useLocoScroll()
   return (
     <>
         <Home />

@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
@@ -34,17 +38,38 @@ module.exports = {
         }
       }
     },
-    // {
-    //   resolve: `gatsby-source-graphql`,
-    //   options: {
-    //     typeName: `GitHub`,
-    //     fieldName: `github`,
-    //     url: `https://api.github.com/graphql`,
-    //     headers: {
-    //       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-    //     },
-    //     fetchOptions: {}
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-github-api`,
+      options: {
+        url: `https://api.github.com/graphql`,
+        token: process.env.GITHUB_TOKEN,
+        graphQLQuery: `query { 
+          user(login: "FatCatCoder"){
+            pinnedItems(first: 6){
+              nodes{
+                ... on Repository{
+                  name
+                  url
+                  homepageUrl
+                  createdAt
+                  updatedAt
+                  pushedAt
+                  stargazerCount
+                  description
+                  languages(first: 3){
+                    nodes{
+                      ... on Language{
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }`,
+        variables: {}
+      },
+    },
   ],
 };

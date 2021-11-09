@@ -2,7 +2,10 @@
 // import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+// gsap.registerPlugin(ScrollToPlugin, ScrollTrigger)
+
 // export default function SmoothScroll(content, viewport, smoothness) {
+//     if(typeof window !== "undefined"){
 //   console.log(content);
 //   content = gsap.utils.toArray(content)[0];
 //   smoothness = smoothness || 1;
@@ -69,4 +72,5 @@
 //     },
 //     onRefresh: killScrub // when the screen resizes, we just want the animation to immediately go to the appropriate spot rather than animating there, so basically kill the scrub.
 //   });
+// }
 // }
