@@ -25,8 +25,7 @@ export default function ParticlesBackground() {
     rendererSettings: { preserveAspectRatio: "xMidYMid slice" }
     };
     function sizer(){
-      console.log(window.screen.width);
-      if(window.screen.width < 750){
+      if(typeof window !== `undefined` && window?.screen?.width < 750){
         return '6rem';
       }
       else{

@@ -2,30 +2,31 @@ import { useEffect } from "react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 import {ScrollToPlugin} from "gsap/dist/ScrollToPlugin";
-import LocomotiveScroll from "locomotive-scroll";
 import nativeSmoothScroll from './nativeSmoothScroll'
 import {useStore} from '../store';
-
+import LocomotiveScroll from "locomotive-scroll";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-export default function useLocoScroll() {
+export default async function useLocoScroll() {
   const scrollerObject = useStore(state => state.scrollerObject)
   const setScrollerObject = useStore(state => state.setScrollerObject)
   const isScrolling = useStore(state => state.isScrolling)
   const setIsScrolling = useStore(state => state.setIsScrolling)
 
-  if(nativeSmoothScroll){
-  ScrollTrigger.addEventListener("scrollStart", () => {
-    setIsScrolling(true)
-  });
-
-  ScrollTrigger.addEventListener("scrollEnd", () => {
-    setIsScrolling(false)
-  });
-}
-
   useEffect(() => {
+
+    
+  if(nativeSmoothScroll()){
+    ScrollTrigger.addEventListener("scrollStart", () => {
+      setIsScrolling(true)
+    });
+
+    ScrollTrigger.addEventListener("scrollEnd", () => {
+      setIsScrolling(false)
+    });
+  }
+
     if(!nativeSmoothScroll() && typeof window !== `undefined`){
     const scrollEl = document.querySelector("#main-container");
     const scrollOptions = {el: scrollEl, smooth: true, getDirection: true, lerp: 0.08, multiplier: 1, smoothMobile: false, tablet: {smooth: false}, smartphone: {smooth: false}};
