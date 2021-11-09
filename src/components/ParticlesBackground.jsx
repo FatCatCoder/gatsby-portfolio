@@ -1,4 +1,5 @@
 import React from "react"
+import {useStore} from '../store'
 
 // styles
 import Particles from 'react-particles-js';
@@ -14,6 +15,9 @@ import LottieAnime from '../images/spaceman-floating.json';
 
 export default function ParticlesBackground() {
   const [theme, setTheme] = React.useState(true); // True (light) / False (dark)
+  const globalTheme = useStore(state=> state.theme);
+  const setGlobalTheme = useStore(state=> state.setTheme);
+  
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -31,9 +35,9 @@ export default function ParticlesBackground() {
     }
   return (
     <>
-    <Particles className={`vw-100 vh-100 particles z-behind position-fixed top-0 start-0 p-0 m-0 ${theme || DarkTheme.particles}`} params={particlesConfig}/>
-    <button style={{zIndex: 0}} className={`btn btn-transparent fs-4 position-fixed top-0 left-0 ${theme? 'text-warning':'text-light'}`} onClick={() => setTheme(!theme)}>
-      {theme? <FontAwesomeIcon icon={faSun} />: <FontAwesomeIcon icon={faMoon} />}
+    <Particles className={`vw-100 vh-100 particles z-behind position-fixed top-0 start-0 p-0 m-0 ${globalTheme || DarkTheme.particles}`} params={particlesConfig}/>
+    <button style={{zIndex: 0}} className={`btn btn-transparent fs-4 position-fixed top-0 left-0 ${globalTheme? 'text-warning':'text-light'}`} onClick={() => setGlobalTheme(!globalTheme)}>
+      {globalTheme? <FontAwesomeIcon icon={faSun} />: <FontAwesomeIcon icon={faMoon} />}
       <Lottie className={'spaceman'} options={defaultOptions} isClickToPauseDisabled={true} height={sizer()} width={sizer()} style={{position: "fixed", top: '0px', left: '0px', zIndex: -1}} />
     </button>
     </>

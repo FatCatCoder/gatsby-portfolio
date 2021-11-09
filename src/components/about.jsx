@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faNodeJs, faBootstrap } from '@fortawesome/free-brands-svg-icons';
 import { faDice } from '@fortawesome/free-solid-svg-icons';
 import '../styles/about.module.scss'
+import * as DarkTheme from "../styles/darkMode.module.scss" 
 
 import Lottie from "react-lottie";
 import LottieAnime from '../images/green-circle-pulsing.json';
@@ -26,6 +27,7 @@ export default function About(){
 
     const scrollerObject = useStore(state => state.scrollerObject);
     const isScrolling = useStore(state => state.isScrolling)
+    const globalTheme = useStore(state=> state.theme);
 
     const defaultOptions = {
         loop: true,
@@ -53,7 +55,7 @@ export default function About(){
             x: 0, skewX: 0,
             opacity: 1,
             scrollTrigger: {
-                id: "aboutme",
+                id: "tagline",
                 trigger: tagLine.current,
                 start: "-150px center",
                 end: "150px center",
@@ -62,14 +64,14 @@ export default function About(){
             }
         });
 
-        gsap.fromTo(bodyText.current, {x: 150, opacity: 0, skewX: -90}, {
+        gsap.fromTo(bodyText.current, {x: 100, opacity: 0, skewX: -75}, {
             x: 0, skewX: 0,
             opacity: 1,
             scrollTrigger: {
-                id: "aboutme",
+                id: "bodytext",
                 trigger: bodyText.current,
-                start: "-100px center",
-                end: "100px center",
+                start: "-50px bottom",
+                end: "50px center",
                 markers: true,
                 scrub: true
             }
@@ -98,19 +100,19 @@ export default function About(){
                 <div className="col-12 col-md-6">
                     <ul className="list-group fs-3">
                         <li className="list-group-item bg-dark text-white">Front End</li>
-                        <li className="list-group-item list-color"><FontAwesomeIcon icon={faReact} style={{color: '#61DAFB'}} /> React / Next.js</li>
-                        <li className="list-group-item list-color"><FontAwesomeIcon icon={faTypeScript} style={{color: '#007acc'}} /> Typescript</li>
-                        <li className="list-group-item list-color"><FontAwesomeIcon icon={faBootstrap} /> Bootstrap 5 / <FontAwesomeIcon icon={faSass} style={{color: '#CF649A'}} /></li>
-                        <li className="list-group-item list-color"><FontAwesomeIcon icon={faGraphQL} style={{color: '#DF34A6'}} /> GraphQL / REST</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faReact} style={{color: '#61DAFB'}} /> React / Next.js</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faTypeScript} style={{color: '#007acc'}} /> Typescript</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faBootstrap} /> Bootstrap 5 / <FontAwesomeIcon icon={faSass} style={{color: '#CF649A'}} /></li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faGraphQL} style={{color: '#DF34A6'}} /> GraphQL / REST</li>
                     </ul>
                 </div>
                 <div className="col-12 col-md-6">
                     <ul className="list-group fs-3">
                         <li className="list-group-item bg-dark text-white">Back End</li>
-                        <li className="list-group-item list-color"><FontAwesomeIcon icon={faNodeJs} style={{color: '#43853D'}} /> Node.js / Express</li>
-                        <li className="list-group-item list-color"><FontAwesomeIcon icon={faNginx} style={{color: '#209237'}} /> Nginx</li>
-                        <li className="list-group-item list-color"><FontAwesomeIcon icon={faPostgreSQL} style={{color: '#336791'}} /> PostgreSQL</li>
-                        <li className="list-group-item list-color"><FontAwesomeIcon icon={faRedis} style={{color: '#D82C20'}} /> Redis</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faNodeJs} style={{color: '#43853D'}} /> Node.js / Express</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faNginx} style={{color: '#209237'}} /> Nginx</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faPostgreSQL} style={{color: '#336791'}} /> PostgreSQL</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faRedis} style={{color: '#D82C20'}} /> Redis</li>
                     </ul>
                 </div>
             </div>

@@ -15,28 +15,18 @@ export default function useLocoScroll() {
   const isScrolling = useStore(state => state.isScrolling)
   const setIsScrolling = useStore(state => state.setIsScrolling)
 
-  // document.addEventListener("touchmove", ()=>{
-  //   setIsScrolling(true)
-  // })
-  // document.addEventListener("touchend", ()=>{
-  //   setIsScrolling(false)
-  // })
-
   if(nativeSmoothScroll){
   ScrollTrigger.addEventListener("scrollStart", () => {
-    //console.log("scrolling started!")
     setIsScrolling(true)
   });
 
   ScrollTrigger.addEventListener("scrollEnd", () => {
-    //console.log("scrolling ended!")
     setIsScrolling(false)
   });
 }
 
   useEffect(() => {
-    if(!nativeSmoothScroll()){
-    console.log('new scroll trigger');
+    if(!nativeSmoothScroll() && typeof window !== `undefined`){
     const scrollEl = document.querySelector("#main-container");
     const scrollOptions = {el: scrollEl, smooth: true, getDirection: true, lerp: 0.08, multiplier: 1, smoothMobile: false, tablet: {smooth: false}, smartphone: {smooth: false}};
     let locoScroll = new LocomotiveScroll(scrollOptions);
@@ -75,8 +65,8 @@ export default function useLocoScroll() {
         locoScroll.update();
       }
     };
-    const scrollStart = ()=>{setIsScrolling(true); console.log('scroll start', isScrolling);};
-    const scrollEnd = ()=>{setIsScrolling(false); console.log('scroll end', isScrolling);};
+    const scrollStart = ()=>{setIsScrolling(true)};
+    const scrollEnd = ()=>{setIsScrolling(false)};
 
     const scrollToPage = (e) => {
       e.preventDefault();

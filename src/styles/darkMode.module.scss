@@ -1,3 +1,22 @@
 .particles{
     background: rgb(20, 20, 20) !important;
 }
+
+.listItemDark{
+    color: white !important;
+    background-color: #94908D !important;
+}
+
+.cardDark{
+    color: white !important;
+    background-color: #94908D !important;
+}
+
+.bgPrimaryPurple{
+    background-color: indigo !important;
+    border-color: indigo !important;
+    &:hover{
+        background-color: mix( indigo, rgb(52, 0, 88), 0.5) !important;
+        border-color: mix( indigo, rgb(52, 0, 88), 0.5) !important;
+    }
+}

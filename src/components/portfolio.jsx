@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import JSONdata from '../content/github.json';
 import {useStore} from '../store';
+import * as DarkTheme from "../styles/darkMode.module.scss" 
 import '../styles/portfolio.module.scss';
 
 
 export default function Portfolio(){
-    const isScrolling = useStore(state => state.isScrolling)
+    const globalTheme = useStore(state=> state.theme);
     return(
     <>
     <div data-scroll-section className={`min-vh-100 container m-0 p-0 text-center mx-auto`} id="portfolio">
@@ -17,7 +18,7 @@ export default function Portfolio(){
             {JSONdata?.data?.user?.pinnedItems?.nodes.map((x, y) => <GitHubCard data={x} key={y} anime={y % 2} />)}
         </div>
         <div className="row ms-0 me-0 mt-5 custom-card rounded-2">
-            <a className="btn btn-primary my-auto" href={'https://github.com/FatCatCoder?tab=repositories'}>
+            <a className={`btn btn-primary my-auto ${globalTheme? '': DarkTheme.bgPrimaryPurple}`} href={'https://github.com/FatCatCoder?tab=repositories'}>
                 <FontAwesomeIcon icon={faGithubSquare} className={'fs-1'} />
             </a>
         </div>

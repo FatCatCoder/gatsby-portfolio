@@ -16,8 +16,6 @@ html, body{
 	scroll-behavior: smooth !important;
 	height: 100vh;
 	width: 100vw;
-	// position: -webkit-relative;
-	// position: relative;
 	
 	/* width */
 	::-webkit-scrollbar {
@@ -66,10 +64,6 @@ html, body{
 
 .z-front{
     z-index: 2;
-}
-
-.nav-btn{
-	width: 100px !important;
 }
 
 .spaceman{

@@ -7,4 +7,6 @@ export const useStore = create(set => ({
     setIsScrolling: (x) => set(state=> ({isScrolling: x})),
     isBlurred: false,
     setIsBlurred: (x) => set(state=> ({isBlurred: x})),
+    theme: true,
+    setTheme: (x) => set(state=>({theme: x}))
 }))

@@ -26,11 +26,11 @@ export default function Contact(){
                     <a className="text-decoration-none text-light" href="teL:9414058529"><FontAwesomeIcon icon={faMobileAlt} /> 941-405-8529</a>
                 </div>
                 <div className="col-10 col-md-6 col-lg-4 col-xl-3 mx-auto text-center">
-                    <a className="btn btn-github col-6" href="https://github.com/FatCatCoder">
-                        <Lottie options={defaultOptions(LottieAnimeGithub)} isClickToPauseDisabled={true} height={'8rem'} width={'8rem'} />
+                    <a className="btn btn-github text-decoration-none col-6" href="https://github.com/FatCatCoder">
+                        <Lottie options={defaultOptions(LottieAnimeGithub)} isClickToPauseDisabled={true} height={'8rem'} width={'8rem'} style={{filter: 'invert(100%)'}} />
                     </a>
-                    <a className="btn btn-linkedin col-6" href="https://www.linkedin.com/in/christian-claudeaux-006479225">
-                        <Lottie options={defaultOptions(LottieAnimeLinkedin)} isClickToPauseDisabled={true} height={'8rem'} width={'8rem'} />
+                    <a className="btn btn-linkedin text-decoration-none col-6" href="https://www.linkedin.com/in/christian-claudeaux-006479225">
+                        <Lottie options={defaultOptions(LottieAnimeLinkedin)} isClickToPauseDisabled={true} height={'8rem'} width={'8rem'} style={{filter: 'invert(100%)'}} />
                     </a>
                 </div>
             </div>
