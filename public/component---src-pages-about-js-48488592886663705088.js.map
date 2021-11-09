@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://gatsby-portfolio/./src/pages/about.js"],"names":[],"mappings":"8IAQA,UANA,WACI,OACI","file":"component---src-pages-about-js-48488592886663705088.js","sourcesContent":["import React, {Component} from 'react';\r\n\r\nfunction About(){\r\n    return(\r\n        <h1>About</h1>\r\n    )\r\n}\r\n\r\nexport default About"],"sourceRoot":""}
