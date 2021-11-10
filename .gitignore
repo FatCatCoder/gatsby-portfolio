@@ -1,7 +1,4 @@
 node_modules/
 .cache/
-.env
-public/
+.env*
 public
-/public
-.env.local

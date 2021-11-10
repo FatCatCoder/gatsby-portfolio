@@ -1,6 +1,7 @@
 import React from "react"
 import gsap from "gsap";
 import useLocoScroll from '../utils/useLocoScroll'
+import formatDate from "../utils/formatDate";
 import {useStore} from '../store'
 import * as DarkTheme from "../styles/darkMode.module.scss" 
 
@@ -8,16 +9,6 @@ export default function GitHubCard({data, anime}) {
   const globalTheme = useStore(state=> state.theme);
   const cardRef = React.useRef(null)
   // useLocoScroll();
-
-  // function calcDate(){
-  //   const today = new Date().toLocaleDateString() ;
-  //   const updated = new Date(data?.pushedAt).toLocaleDateString();
-  //   const daysAgo = Math.round(Math.floor(Date.parse(today) - Date.parse(updated)) / 86400000);
-  //   if (!daysAgo){
-  //     return updated
-  //   }
-  //   return daysAgo + ' Days ago'
-  // }
 
   React.useEffect(() => {
       gsap.fromTo(cardRef.current, {y: -50, x: anime? 150: -150, opacity: 0}, {
@@ -62,7 +53,7 @@ export default function GitHubCard({data, anime}) {
               <em>{data?.languages?.nodes.map(x => x.name).join(', ')}</em>
             </p>
           </div>
-          <div className="card-footer text-muted">updated@ {data?.updatedAt}</div>
+          <div className="card-footer text-muted">updated@ {formatDate(data?.pushedAt)}</div>
         </div>
       </div>
     </>

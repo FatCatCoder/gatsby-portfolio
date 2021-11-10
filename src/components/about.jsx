@@ -39,7 +39,6 @@ export default function About(){
         };
 
     React.useEffect(() => {
-        console.log(window.scroll);
         // About Me (heading)
         gsap.fromTo(myRef.current, {y: -150, opacity: 0}, {
             y: 0,

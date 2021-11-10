@@ -33,8 +33,6 @@ export default async function useLocoScroll() {
         lerp: 0.07, multiplier: 1, touchMultiplier: 2.5, 
         smoothMobile: true, tablet: {smooth: false}, smartphone: {smooth: true}
       };
-        
-      console.log('new scroller' , scrollerObject);
 
       let locoScroll = scrollerObject || new LocomotiveScroll(scrollOptions);
       window.scroll = locoScroll;
@@ -98,7 +96,6 @@ export default async function useLocoScroll() {
           });
           locoScroll.destroy();
           locoScroll = null;
-          console.log("Kill", locoScroll);
         }
       };
     }
