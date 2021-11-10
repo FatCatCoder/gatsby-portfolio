@@ -14,46 +14,46 @@ export default function Portfolio(){
     const globalTheme = useStore(state=> state.theme);
     const [repos, setRepos] = React.useState(BuildData);
 
-    // React.useEffect(() => {
-    //    async function fetching(){
-    //     const data = await fetch('https://api.github.com/graphql', {
-    //       method: "POST",
-    //       headers: {"Content-type": "application/json", "Authorization": "bearer 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"},
-    //       body: JSON.stringify({
-    //         query: `query { 
-    //           user(login: "FatCatCoder"){
-    //             pinnedItems(first: 6){
-    //               nodes{
-    //                 ... on Repository{
-    //                   name
-    //                   url
-    //                   homepageUrl
-    //                   createdAt
-    //                   updatedAt
-    //                   pushedAt
-    //                   stargazerCount
-    //                   description
-    //                   languages(first: 3){
-    //                     nodes{
-    //                       ... on Language{
-    //                         name
-    //                       }
-    //                     }
-    //                   }
-    //                 }
-    //               }
-    //             }
-    //           }
-    //         }`
-    //       })
-    //     })
-    //     const {data: {user: {pinnedItems: {nodes}}}} = await data.json();
-    //     if(nodes){
-    //       setRepos(nodes);
-    //     }
-    //   }
-    //   fetching()
-    // }, [])
+    React.useEffect(() => {
+       async function fetching(){
+        const data = await fetch('https://api.github.com/graphql', {
+          method: "POST",
+          headers: {"Content-type": "application/json", "Authorization": `bearer ${process.env.GITHUB_TOKEN}`},
+          body: JSON.stringify({
+            query: `query { 
+              user(login: "FatCatCoder"){
+                pinnedItems(first: 6){
+                  nodes{
+                    ... on Repository{
+                      name
+                      url
+                      homepageUrl
+                      createdAt
+                      updatedAt
+                      pushedAt
+                      stargazerCount
+                      description
+                      languages(first: 3){
+                        nodes{
+                          ... on Language{
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }`
+          })
+        })
+        const {data: {user: {pinnedItems: {nodes}}}} = await data.json();
+        if(nodes){
+          setRepos(nodes);
+        }
+      }
+      fetching()
+    }, [])
 
     return(
     <>
