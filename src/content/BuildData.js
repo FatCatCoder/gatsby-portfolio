@@ -33,6 +33,7 @@ function BuildData(){
         }
     }
     `)
+    console.log(nodes);
     return nodes
 }
 
