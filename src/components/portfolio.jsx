@@ -14,11 +14,12 @@ export default function Portfolio(){
     const globalTheme = useStore(state=> state.theme);
     const [repos, setRepos] = React.useState(BuildData);
 
+    /*
     React.useEffect(() => {
        async function fetching(){
         const data = await fetch('https://api.github.com/graphql', {
           method: "POST",
-          headers: {"Content-type": "application/json", "Authorization": `bearer ${process.env.GITHUB_TOKEN}`},
+          headers: {"Content-type": "application/json", "Authorization": `bearer ${process.env.token}`},
           body: JSON.stringify({
             query: `query { 
               user(login: "FatCatCoder"){
@@ -54,6 +55,7 @@ export default function Portfolio(){
       }
       fetching()
     }, [])
+    */
 
     return(
     <>

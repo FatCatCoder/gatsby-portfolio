@@ -53,7 +53,7 @@ export default function GitHubCard({data, anime}) {
               <em>{data?.languages?.nodes.map(x => x.name).join(', ')}</em>
             </p>
           </div>
-          <div className="card-footer text-muted">updated@ {formatDate(data?.pushedAt)}</div>
+          <div className="card-footer text-muted">created @ {new Date(data?.createdAt).toDateString()}</div>
         </div>
       </div>
     </>
