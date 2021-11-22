@@ -1,6 +1,6 @@
 {
   "name": "gatsby-portfolio",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": true,
   "description": "gatsby-portfolio",
   "author": "FatCatCoder",
@@ -13,7 +13,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public -b production"
+    "deploy": "gatsby build && gh-pages -d public -b production",
+    "ghhelp": "gh-pages --help"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
