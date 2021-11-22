@@ -86,10 +86,10 @@ export default function About(){
 
         <h1 ref={myRef} className="display-1 text-center text-white" id="aboutme">About Me</h1>
         <div className={`container mx-auto text-center shadow ${isScrolling? '': 'stained-glass'}`}>
-            <h4 className="text-start fw-light text-lighter">Hello There,</h4>
+            <h4 className="text-start fw-light text-lighter"></h4>
             <div className="row">
                 <div class="text-center">
-                    <p ref={tagLine} className="fs-2"><em>"Building exciting & dynamic web applications <br /> to make the internet a more wonderful place."</em></p>
+                    <p ref={tagLine} className="fs-2 pt-2"><em>"Building exciting & dynamic web applications <br /> to make the internet a more wonderful place."</em></p>
                 </div>
             </div>
             <p ref={bodyText} className="fs-3 text-light p-2">
@@ -104,7 +104,7 @@ export default function About(){
                         <li className="list-group-item bg-dark text-white">Front End</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faReact} style={{color: '#61DAFB'}} /> React / Next.js</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faTypeScript} style={{color: '#007acc'}} /> Typescript</li>
-                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faBootstrap} /> Bootstrap 5 / <FontAwesomeIcon icon={faSass} style={{color: '#CF649A'}} /></li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faBootstrap} style={{color: '#7611F7'}} /> Bootstrap 5 / <FontAwesomeIcon icon={faSass} style={{color: '#CF649A'}} /></li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faGraphQL} style={{color: '#DF34A6'}} /> GraphQL / REST</li>
                     </ul>
                 </div>

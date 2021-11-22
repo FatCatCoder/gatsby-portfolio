@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 import {ScrollToPlugin} from "gsap/dist/ScrollToPlugin";
-import nativeSmoothScroll from './nativeSmoothScroll'
+// import isMobile from './isMobile'
 import {useStore} from '../store';
 import LocomotiveScroll from "locomotive-scroll";
 
@@ -14,24 +14,13 @@ export default async function useLocoScroll() {
   const setIsScrolling = useStore(state => state.setIsScrolling)
 
   useEffect(() => {
-    if(true){
-      ScrollTrigger.addEventListener("scrollStart", () => {
-        setIsScrolling(true)
-      });
-
-      ScrollTrigger.addEventListener("scrollEnd", () => {
-        setIsScrolling(false)
-      });
-    }
-
     if( typeof window !== `undefined`){
-    
       const scrollEl = document.querySelector("#___gatsby");
 
       const scrollOptions = {
         el: scrollEl, smooth: true, getDirection: true, 
         lerp: 0.07, multiplier: 1, touchMultiplier: 2.5, 
-        smoothMobile: true, tablet: {smooth: false}, smartphone: {smooth: true}
+        smoothMobile: true, tablet: {smooth: true}, smartphone: {smooth: true}
       };
 
       let locoScroll = scrollerObject || new LocomotiveScroll(scrollOptions);

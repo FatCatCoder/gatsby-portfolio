@@ -4,7 +4,7 @@ import * as React from "react"
 import Layout from '../components/Layout';
 
 // utils
-import isMobile from "../utils/isMobile";
+// import isMobile from "../utils/isMobile";
 
 // styles
 import ParticlesBackground from '../components/ParticlesBackground'
@@ -15,11 +15,14 @@ const IndexPage = () => {
     <>
       <div data-scroll-container className="main-container container-fluid bg-transparent position-relative" id="main-container">
         <Layout />
-        {!isMobile()? <ParticlesBackground /> : null}
       </div>
-      {isMobile()? <ParticlesBackground /> : null}
+      <ParticlesBackground />
     </>
   )
 }
 
 export default IndexPage;
+
+// inner to outer
+/* {!isMobile()? <ParticlesBackground /> : null} */
+/* {isMobile()? <ParticlesBackground /> : null} */

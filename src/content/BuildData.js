@@ -1,5 +1,15 @@
 import { useStaticQuery, graphql } from "gatsby"
 
+/*
+
+readme: object(expression: "main:README.md") {
+            ... on Blob {
+              text
+            }
+          }
+
+*/
+
 function BuildData(){
     const {allGithubData: {edges: {[0]: {node: {rawResult: {data: {user: {pinnedItems: {nodes}}}}}}}}} = useStaticQuery(graphql`query MyQuery {
         allGithubData {
