@@ -4,3 +4,5 @@ export { faNginx } from './fa-nginx';
 export { faPostgreSQL } from './fa-postgresql';
 export { faSass } from './fa-sass';
 export { faRedis } from './fa-redis';
+export { faCSharp } from './fa-csharp';
+export { faBlazor } from './fa-blazor';

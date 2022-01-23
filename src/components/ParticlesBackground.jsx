@@ -14,9 +14,14 @@ import LottieAnime from '../images/spaceman-floating.json';
 
 
 export default function ParticlesBackground() {
-  const [theme, setTheme] = React.useState(true); // True (light) / False (dark)
+  // True (light) / False (dark)
   const globalTheme = useStore(state=> state.theme);
   const setGlobalTheme = useStore(state=> state.setTheme);
+
+  React.useEffect(() => {
+    // Check for dark mode preference
+    setGlobalTheme(!window.matchMedia('(prefers-color-scheme: dark)').matches)
+  }, [])
   
   const defaultOptions = {
     loop: true,

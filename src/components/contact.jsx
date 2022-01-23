@@ -36,7 +36,7 @@ export default function Contact(){
             </div>
         </div>
         <div className="row position-absolute bottom-0 mb-2 text-center">
-            <a className="text-decoration-none text-light" href="https://github.com/FatCatCoder/gatsby-portfolio"> <FontAwesomeIcon icon={faCodeBranch} /> fork this site! <br /> Christian Claudeaux @2021</a>
+            <a className="text-decoration-none text-light" href="https://github.com/FatCatCoder/gatsby-portfolio"> <FontAwesomeIcon icon={faCodeBranch} /> fork this site! <br /> Christian Claudeaux @2022</a>
         </div>
     </div>
     </>

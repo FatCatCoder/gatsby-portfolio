@@ -14,7 +14,7 @@ import LottieAnime from '../images/green-circle-pulsing.json';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faNodeJs, faBootstrap } from '@fortawesome/free-brands-svg-icons';
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
-import { faGraphQL, faNginx, faPostgreSQL, faRedis, faSass, faTypeScript } from "../assets/icons";
+import { faBlazor, faCSharp, faGraphQL, faNginx, faPostgreSQL, faRedis, faSass, faTypeScript } from "../assets/icons";
 
 library.add(faGraphQL, faNginx, faPostgreSQL, faRedis, faSass, faTypeScript);
 dom.watch();
@@ -93,7 +93,7 @@ export default function About(){
                 </div>
             </div>
             <p ref={bodyText} className="fs-3 text-light p-2">
-                I find my heart in the flourishing community of javascript and open source projects it boasts.
+                Currently a C# developer but I also find my heart in the flourishing community of javascript and open source projects.
                  I also compose music, build with micro-controllers (c++), and geek out over espresso.
                  Mainly interested in building creative and productive platforms and tools.
             </p>
@@ -103,7 +103,7 @@ export default function About(){
                     <ul className="list-group fs-3">
                         <li className="list-group-item bg-dark text-white">Front End</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faReact} style={{color: '#61DAFB'}} /> React / Next.js</li>
-                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faTypeScript} style={{color: '#007acc'}} /> Typescript</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faTypeScript} style={{color: '#007acc'}} /> Typescript / <FontAwesomeIcon icon={faBlazor} style={{color: '#6a237c'}} /> Blazor</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faBootstrap} style={{color: '#7611F7'}} /> Bootstrap 5 / <FontAwesomeIcon icon={faSass} style={{color: '#CF649A'}} /></li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faGraphQL} style={{color: '#DF34A6'}} /> GraphQL / REST</li>
                     </ul>
@@ -113,8 +113,8 @@ export default function About(){
                         <li className="list-group-item bg-dark text-white">Back End</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faNodeJs} style={{color: '#43853D'}} /> Node.js / Express</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faNginx} style={{color: '#209237'}} /> Nginx</li>
-                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faPostgreSQL} style={{color: '#336791'}} /> PostgreSQL</li>
-                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faRedis} style={{color: '#D82C20'}} /> Redis</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faPostgreSQL} style={{color: '#336791'}} /> PostgreSQL / <FontAwesomeIcon icon={faRedis} style={{color: '#D82C20'}} /> Redis</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faCSharp} style={{color: '#6a237c'}} /> ASP.Net Core 6</li>
                     </ul>
                 </div>
             </div>
@@ -123,8 +123,9 @@ export default function About(){
                     <th>
                         <Lottie isClickToPauseDisabled={true} options={defaultOptions} height={'3rem'} width={"3rem"} />
                     </th>
-                    <th style={{fontWeight: 400}}>
-                        Looking for the next project to take on.
+                    <th style={{fontWeight: 400, textAlign: "start"}}>
+                        {/* Always Looking for a project to take on. */}
+                        C# Fullstack Developer @UF Resources (Sarasota, Florida)
                     </th>
                 </tr>
             </table>

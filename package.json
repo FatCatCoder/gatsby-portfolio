@@ -1,6 +1,6 @@
 {
   "name": "gatsby-portfolio",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "private": true,
   "description": "gatsby-portfolio",
   "author": "FatCatCoder",
@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop -H 0.0.0.0",
+    "dev": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
