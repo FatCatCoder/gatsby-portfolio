@@ -16,13 +16,13 @@ const BlogPage = ({data}) => {
   return(
     <>
       <div data-scroll-container className="main-container container-fluid bg-transparent position-relative" id="main-container">
-        <div className="text-center">
-          <h1>BlogPage</h1>
+        <div className="text-center bg-transparent">
+          <h1>Blog Page</h1>
 
-          <div class="card-group">
+          <div class="card-group bg-transparent">
             {data.allMarkdownRemark.nodes.map((x) => (
-              <Link class="card text-primary"  to={`${x.fields.slug}`}>
-                <img src="" class="card-img-top"/>
+              <Link class="card text-primary bg-transparent"  to={`${x.fields.slug}`}>
+                <img src={x.frontmatter.img} class="card-img-top mx-auto" style={{width: '150px', height: '150px'}}/>
                 <div class="card-body">
                   <h5 class="card-title">{x.frontmatter.title}</h5>
                   <p class="card-text">{x.frontmatter.description}.</p>
@@ -49,6 +49,7 @@ export const query = graphql`
           date
           description
           title
+          img
         }
         id
         fileAbsolutePath

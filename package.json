@@ -8,6 +8,7 @@
     "gatsby"
   ],
   "scripts": {
+    "cms": "npx netlify-cms-proxy-server",
     "dev": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
     "build": "gatsby build",

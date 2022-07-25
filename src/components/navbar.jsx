@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import isMobile from '../utils/isMobile';
+import { Link } from "gatsby"
 
 function Navbar(){
     function toSnap(e){
@@ -28,7 +29,10 @@ function Navbar(){
                         </li>
                         <li className="nav-item mx-auto">
                             <button className="nav-link btn btn-transparent text-white" onClick={(e)=> toSnap(e)} to="#contact">Contact</button>
-                        </li>   
+                        </li>
+                        <li className="nav-item mx-auto">
+                            <Link className="nav-link btn btn-transparent text-white" to="/blog">Blog</Link>
+                        </li>    
                     </ul>
                 </div>
             </div>

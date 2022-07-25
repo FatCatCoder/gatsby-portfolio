@@ -19,7 +19,7 @@ export default function Contact(){
     <div data-scroll-section className="vh-100 row m-0 p-0" id="contact" style={{overflow: "hidden"}}>
         <div className="row mx-auto text-center my-auto">
             <div className="container">
-                <h1 className="display-1 text-center">Contact</h1>
+                {/* <h1 className="display-1 text-center">Contact</h1> */}
                 <h4><em>Lets see what we can build together</em></h4>
                 <div className="fs-4">
                     <p className=""><FontAwesomeIcon icon={faEnvelope} /> christianclaudeaux@gmail.com</p>

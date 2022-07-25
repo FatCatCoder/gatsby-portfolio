@@ -19,7 +19,7 @@ export default async function useLocoScroll() {
 
       const scrollOptions = {
         el: scrollEl, smooth: true, getDirection: true, 
-        lerp: 0.07, multiplier: 1, touchMultiplier: 2.5, 
+        lerp: 0.07, multiplier: 1, touchMultiplier: 2, 
         smoothMobile: true, tablet: {smooth: true}, smartphone: {smooth: true}
       };
 
