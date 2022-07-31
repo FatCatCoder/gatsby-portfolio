@@ -1,5 +1,6 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link,} from "gatsby"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 
 // components
 import Layout from '../../components/Layout';
@@ -13,16 +14,18 @@ import "../../styles/global.scss"
 
 const BlogPage = ({data}) => {
 
+  console.log(data);
+
   return(
     <>
       <div data-scroll-container className="main-container container-fluid bg-transparent position-relative" id="main-container">
         <div className="text-center bg-transparent">
           <h1>Blog Page</h1>
 
-          <div class="card-group bg-transparent">
+          <div class="card-group bg-transparent border-none text-decoration-none">
             {data.allMarkdownRemark.nodes.map((x) => (
-              <Link class="card text-primary bg-transparent"  to={`${x.fields.slug}`}>
-                <img src={x.frontmatter.img} class="card-img-top mx-auto" style={{width: '150px', height: '150px'}}/>
+              <Link class="card text-primary bg-transparent text-white border-0 text-decoration-none"  to={`${x.fields.slug}`}>
+                <img src={x.frontmatter.img} class="card-img-top mx-auto" style={{maxWidth: '450px', maxHeight: '450px'}} />
                 <div class="card-body">
                   <h5 class="card-title">{x.frontmatter.title}</h5>
                   <p class="card-text">{x.frontmatter.description}.</p>
@@ -31,7 +34,7 @@ const BlogPage = ({data}) => {
               </Link>
             ))}
           </div>
-          <p>{data.allMarkdownRemark.nodes[0].frontmatter.title}</p>
+          
         </div>
       </div>
       <ParticlesBackground />
@@ -46,7 +49,7 @@ export const query = graphql`
     allMarkdownRemark {
       nodes {
         frontmatter {
-          date
+          date(formatString: "MMMM DD, YYYY")
           description
           title
           img
