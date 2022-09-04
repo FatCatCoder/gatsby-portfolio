@@ -30,8 +30,8 @@ function Navbar(){
                         <li className="nav-item mx-auto">
                             <button className="nav-link btn btn-transparent text-white" onClick={(e)=> toSnap(e)} to="#contact">Contact</button>
                         </li>
-                        <li className="nav-item mx-auto">
-                            <Link className="nav-link btn btn-transparent text-white" to="/blog">Blog</Link>
+                        <li className="nav-item mx-auto" onClick={() => window.location = `${window.location.origin}/fatcatcoder`}>
+                            <a className="nav-link btn btn-transparent bg-transparent text-white" href="/fatcatcoder">Blog</a>
                         </li>    
                     </ul>
                 </div>
