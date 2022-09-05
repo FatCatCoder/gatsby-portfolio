@@ -8,3 +8,6 @@
   - Hosted here on Github Pages
 ---
 
+## Also includes blog made with next.js repo
+https://github.com/FatCatCoder/fatcatcoder-blog
+
