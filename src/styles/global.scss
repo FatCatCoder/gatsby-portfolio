@@ -19,7 +19,7 @@ html, body{
 	
 	/* width */
 	::-webkit-scrollbar {
-	width: 0.75rem;
+	width: 0.6rem;
 	border-radius: 20px !important;
 	background: transparent !important;
 	overflow: overlay;
@@ -33,14 +33,14 @@ html, body{
   
   	/* Handle */
   	::-webkit-scrollbar-thumb {
-	background: #888;
+	background: rgb(72, 72, 72);
 	border-radius: 20px !important;
 	overflow: overlay;
   	}
   
   	/* Handle on hover */
   	::-webkit-scrollbar-thumb:hover {
-	background: #555;
+	background: rgb(53, 53, 53);
 	overflow: overlay;
   	}
 }

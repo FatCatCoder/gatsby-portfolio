@@ -13,7 +13,7 @@ import "../styles/global.scss"
 const IndexPage = () => {
   return(
     <>
-      <div data-scroll-container className="main-container container-fluid bg-transparent position-relative" id="main-container">
+      <div className="main-container container-fluid bg-transparent position-relative" id="main-container">
         <Layout />
       </div>
       <ParticlesBackground />

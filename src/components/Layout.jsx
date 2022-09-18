@@ -8,7 +8,7 @@ import Contact from './contact.jsx';
 import useLocoScroll from '../utils/useLocoScroll'
 
 export default function IndexLayout() {
-  useLocoScroll()
+  //useLocoScroll()
   return (
     <>
         <Home />

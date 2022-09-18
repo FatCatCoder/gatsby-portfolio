@@ -2,6 +2,10 @@ import React from "react";
 import gsap from "gsap";
 import useLocoScroll from '../utils/useLocoScroll'
 import {useStore} from '../store';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import IISvg from '../assets/icons/MicrosoftIIS.svg'
+import MSvg from '../assets/icons/Microsoft_Logo.svg'
 
 // styles 
 import '../styles/about.module.scss'
@@ -21,14 +25,16 @@ dom.watch();
 
 
 export default function About(){
+    gsap.registerPlugin(ScrollTrigger)
+    
     const myRef = React.useRef(null)
     const tagLine = React.useRef(null)
     const bodyText = React.useRef(null)
 
 //    useLocoScroll();
 
-    const scrollerObject = useStore(state => state.scrollerObject);
-    const isScrolling = useStore(state => state.isScrolling)
+    // const scrollerObject = useStore(state => state.scrollerObject);
+    // const isScrolling = useStore(state => state.isScrolling)
     const globalTheme = useStore(state=> state.theme);
 
     const defaultOptions = {
@@ -78,14 +84,14 @@ export default function About(){
                 scrub: true
             }
         });
-    })
+    }, [])
 
     return(
     <>
-    <div data-scroll-section className="min-vh-100 container m-0 p-0 mx-auto" id="about">
+    <div className="min-vh-100 container m-0 p-0 mx-auto" id="about">
 
         <h1 ref={myRef} className="display-1 text-center text-white" id="aboutme">About Me</h1>
-        <div className={`container mx-auto text-center shadow ${isScrolling? '': 'stained-glass'}`}>
+        <div className={`container mx-auto text-center`}>
             <h4 className="text-start fw-light text-lighter"></h4>
             <div className="row">
                 <div class="text-center">
@@ -104,7 +110,7 @@ export default function About(){
                         <li className="list-group-item bg-dark text-white">Front End</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faReact} style={{color: '#61DAFB'}} /> React / Next.js</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faTypeScript} style={{color: '#007acc'}} /> Typescript</li>
-                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faTypeScript} style={{color: '#007acc'}} /> <FontAwesomeIcon icon={faBlazor} style={{color: '#6a237c'}} /> Blazor</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faBlazor} style={{color: '#6a237c'}} /> Blazor</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faBootstrap} style={{color: '#7611F7'}} /> Bootstrap 5 / <FontAwesomeIcon icon={faSass} style={{color: '#CF649A'}} /></li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faGraphQL} style={{color: '#DF34A6'}} /> GraphQL / REST</li>
                     </ul>
@@ -113,7 +119,7 @@ export default function About(){
                     <ul className="list-group fs-3">
                         <li className="list-group-item bg-dark text-white">Back End</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faNodeJs} style={{color: '#43853D'}} /> Node.js / Express</li>
-                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faNginx} style={{color: '#209237'}} /> Nginx</li>
+                        <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faNginx} style={{color: '#209237'}} /> Nginx / <MSvg style={{width: 24, margin: 0, padding: 0}}/> <span style={{marginTop: 20}}>IIS</span></li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faPostgreSQL} style={{color: '#336791'}} /> PostgreSQL / <FontAwesomeIcon icon={faRedis} style={{color: '#D82C20'}} /> Redis</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}><FontAwesomeIcon icon={faCSharp} style={{color: '#6a237c'}} /> .Net Core 6</li>
                         <li className={`list-group-item list-color ${globalTheme? '': DarkTheme.listItemDark}`}>

@@ -39,6 +39,14 @@ module.exports = {
       }
     },
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
+    },
+    {
       resolve: `gatsby-source-github-api`,
       options: {
         url: `https://api.github.com/graphql`,
