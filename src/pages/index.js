@@ -37,12 +37,6 @@ dom.watch();
 const IndexPage = () => {
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-  if(typeof(window) !== undefined){
-    window.mygsap = gsap;
-  }
-
-  console.log(ScrollToPlugin)
-
   const [theme, setTheme] = React.useState(true);
   const [repos, setRepos] = React.useState([]);
 
