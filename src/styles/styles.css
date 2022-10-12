@@ -1,0 +1,104 @@
+html, body{
+	color: white !important;
+}
+
+.middle{
+    position: relative;
+    transform: translate(0%, 75%);
+}
+
+.spaceman{
+	font-size: 0.5rem !important;
+    width: 5rem;
+}
+li.list-color{
+    color: #320A28;
+}
+
+.particlesDark{
+    background: rgb(20, 20, 20) !important;
+}
+
+.listItemDark{
+    color: whitesmoke !important;
+    background-color: #222121 !important;
+}
+
+.cardDark{
+    /* color: whitesmoke !important; */
+    background-color: #252c31 !important;
+}
+
+.bgPrimaryPurpleDark{
+    background-color: indigo !important;
+    border-color: indigo !important;
+}
+.bgPrimaryPurpleDark:hover{
+    background-color: mix( indigo, rgb(52, 0, 88), 0.5) !important;
+        border-color: mix( indigo, rgb(52, 0, 88), 0.5) !important;
+}
+
+
+.custom-card{
+    color: black;
+    background-color: #F6F8FA !important;
+    box-shadow: 5px 5px #3e3e3e;
+    transform: translateX(0) translateY(0);
+    transition: box-shadow, transform .35s;
+}
+.custom-card:hover{
+    box-shadow: 1px 1px #3e3e3e, 2px 2px #3e3e3e, 3px 3px #3e3e3e, 4px 4px #3e3e3e, 5px 5px #3e3e3e, 6px 6px #3e3e3e, 7px 7px #3e3e3e, 8px 8px #3e3e3e, 10px 10px #3e3e3e;
+    transform: translateX(-8px) translateY(-8px);
+}
+
+.stained-glass{
+    backdrop-filter: blur(2px) !important;
+    transition: backdrop-filter 2s ease-in;
+}
+
+/* weird hack for iOS mobile to make the circle avatar */
+.avatar-image{
+    overflow: hidden !important;
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+div#tsparticles{
+	z-index: -2 !important;
+	height: 100vh;
+	width: 100vw;
+	padding: 0;
+	margin: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: backgroundGradient 20s ease-in-out infinite;
+	-webkit-animation: backgroundGradient 20s ease-in-out infinite;
+}
+
+#tsparticles > canvas{
+	
+	z-index: -1 !important;
+}
+
+@keyframes backgroundGradient {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+.christianclaudeaux{
+	font-weight: 600;
+	color: whitesmoke;
+	transform: skewX(5deg);
+	text-shadow: 5px 1px  rgb(53, 50, 50) !important;
+}

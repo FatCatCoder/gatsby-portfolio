@@ -1,11 +1,10 @@
 # Christian Claudeaux Portfolio
 ## https://christianclaudeaux.com/
 - ### Created with Gatsby.js
-  - *V.1* of the template
+  - *V2* of the template
   - Free to fork and use for your own site.
-  - Uses Github's GraphQL API
-  - gh-pages pipeline into this repository under production branch
-  - Hosted here on Github Pages
+  - Hosted here on Github Pages using gh-pages pipeline into this repository under production branch
+  - GSAP scroll animations
 ---
 
 ## Also includes blog made with next.js repo

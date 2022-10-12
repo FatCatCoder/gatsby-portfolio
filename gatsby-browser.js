@@ -1,3 +1,2 @@
-import "@popperjs/core/dist/umd/popper.min"
-import "bootstrap/dist/js/bootstrap.min"
-import "./src/styles/global.scss"
+import "./src/styles/bootstrap.css"
+import "./src/styles/styles.css"
